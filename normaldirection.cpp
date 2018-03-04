@@ -2,11 +2,12 @@
 #include "2Dplane"
 
 
-normaldirection(2Dplane inputplane)
+
+std::tuple<float,float,float> normaldirection(2Dplane inputplane)
 {
-    int normalalongx;
-    int normalalongy;
-    int normalalongz;
+    float normalalongx;
+    float normalalongy;
+    float normalalongz;
 
 
 
