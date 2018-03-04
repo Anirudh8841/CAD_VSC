@@ -22,3 +22,14 @@ String getFileSource();
 */
 int getOutputFormat();
 
+/** This function checks if the user has clicked the button for input through file 
+ *  \details Takes no parameters 
+ *  \return whether checkbox for input from file has been checked or not
+ */
+bool inputFromFileClicked();
+
+
+/*! This function checks if the input window is the active window on the user's screen.
+*   \return true if input window is active
+*/
+bool inputPanelActive();

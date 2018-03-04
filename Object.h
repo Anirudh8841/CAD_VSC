@@ -4,5 +4,5 @@
 class Object{
     public: 
         std::list<Vertex> VertexList;
-        std::list<Edge> EdgeList;
+        std::list<std::tuple<Vertex, Vertex > > EdgeList;
 };

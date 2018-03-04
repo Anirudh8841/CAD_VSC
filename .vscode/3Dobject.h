@@ -17,4 +17,4 @@ class 3Dobject: public Object{
     std::list<Vertex> listOfVertices;
     std::list<Edge> listOfEdges;
     std::list<Vertex> listOfFaces;
-}
+};
