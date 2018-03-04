@@ -19,34 +19,35 @@
 *    -# make install
 */
 
-#include
-
 using namespace std;
+/*! Main function loops until the event to close the application is issued.
+
+*   If drawing window is active it watches out for the input through drawing panel.
+
+User can, at any moment change the active window and the state of the drawing will be saved until application is closed.
+User can input a file to be read as object by clicking the "Input from file button". Following which brower would pop open.
+User can navigate through and select the file.
+
+Functions would be called to parse and make an object out of it.
+*/
 
 int main(){
-	/*! This contains the integer equivalent of the action to be performed. 
-	| Value | Action |
-	| :----:|:------:|
-	| 1		| 3D - 2D|
-	| 2		| 2D - 3D|
-	*/
-	int action = 0;  
+	int action;
 	string file; 
-	int outputFormat = 0; ///< stores the output format requested by the user
-	inputObject = new 3DObject(); /**< Temporary object storage unit. User's drawing or object from the input file is stored in this memory.
-										This is passed across the functions for method. */
-	while(not_Exit())///<This function checks whether user has issued "close the application" event
+	int outputFormat = 0;
+	inputObject = new 3DObject();
+	while(not_Exit())
 	{
-		if(inputPanelActive()) ///< This function checks if the current active window is the drawing interface or not.
+		if(inputPanelActive()) 
 		{
 			inputObject = drawingToInputFormat();
 			action = actionToTake();
 			outputFormat = getOutputFormat();
 			process(inputObject, action, outputFormat);
 		}
-		if(inputFromFileClicked()) ///< This function checks if the user has clicked the button for input through file
+		if(inputFromFileClicked()) 
 		{
-			file = getFileSource(); ///< 
+			file = getFileSource(); 
 			inputObject = parseFileAndMakeObject(file);
 			outputFormat = getOutputFormat();
 			process(inputObject, action, outputFormat);
