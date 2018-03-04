@@ -1,9 +1,10 @@
+
 #pragma once;
-#include<tuple> 
 #include "Vertex"
 
 
 class Face{
-    std::tuple<Vertex,Vertex,Vertex> F;
+    public:
+    std::tuple<Vertex,Vertex,Vertex> F;///< F is a tuple of vertices used for representing a face 
    
     };

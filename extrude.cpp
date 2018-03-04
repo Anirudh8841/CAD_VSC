@@ -7,9 +7,8 @@
  * \detail Creates a 3D solid from an object that encloses an area 
 */
 #include<iostream>
-#include<tuple> 
-#include "2Dplane"
-#include "3Dobject"
+#include "generate_3D_object"
+#include "normaldirection"
 
 using namespace std;
 
