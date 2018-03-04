@@ -5,10 +5,18 @@
 * \date 26-02-2018 
 * \warning Implementation is yet to be taken up. Code structure might change here and there at completion. This is the proposed structure.
 * \mainpage Computer Aided Design: Draw and Visualize
-* \section Overview
-fslfjsdlfjl
+* \section Functionality Overview
+*   -# Draw 3D and 2D objects interactively.
+*   -# As of version 1.0, implementation supports family of convex polyhedrals
+*   -# Save and load from a file
+*   -# Tranform between different views
+*       - Oblique 3D to isometric
+        - Isometric to orthographic views
+* 
 * \section Installation
-* \subsection From source code using 
+* \subsection Build from source code using cmake and make 
+*    -# cmake 
+*    -# make install
 */
 
 #include

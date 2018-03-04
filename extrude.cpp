@@ -6,6 +6,8 @@
  * @return Returns the generated 3d object
 */
 
+
+
 Plane Extrude(int amount,2Dplane inputplane){
     
     tuple <int, int, int> Normal;
