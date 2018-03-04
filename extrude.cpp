@@ -5,6 +5,11 @@
  * @param inputplane a 2Dplane.
  * @return Returns the generated 3d object
 */
+#include<iostream>
+#include<tuple> 
+#include "2Dplane"
+
+using namespace std;
 
 Plane Extrude(int amount,2Dplane inputplane){
     
