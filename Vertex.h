@@ -2,6 +2,6 @@
 #include<tuple> 
 
 class Vertex{
-    std::tuple<int,int,int> V;
+    std::tuple<float,float,float> V;
    
     };
