@@ -51,7 +51,5 @@ int main(){
 			outputFormat = getOutputFormat();
 			process(inputObject, action, outputFormat);
 		}
-
 	}
-    
 }
