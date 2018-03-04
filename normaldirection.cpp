@@ -1,6 +1,8 @@
 #include <tuple>
+#include "2Dplane"
 
-std::tuple<int, int, int> normaldirection(2Dplane inputplane)
+
+normaldirection(2Dplane inputplane)
 {
     int normalalongx;
     int normalalongy;
