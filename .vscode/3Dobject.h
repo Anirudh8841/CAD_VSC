@@ -1,20 +1,15 @@
 
-//! \class 3Dobject 
-    /*!
-    * \param vertex_list a Vertex list arguement.
-    * \return Returns a  3D object
-    * The function generate_3D_object takes vertex list and forms edges and faces list to form a convex polyhedron object
-    */
+/*! \class 3Dobject
+    \brief  the Class 3Dobject is used for storing 3dobjects and this class consists of list of vertices, edges and faces.
+*/
 
 #pragma once;
-#include <list>
+
 #include "Vertex"
-#include "Edge"
-#include "Face"
 
 class 3Dobject: public Object{
     public:
-    std::list<Vertex> listOfVertices;
-    std::list<Edge> listOfEdges;
-    std::list<Vertex> listOfFaces;
-};
+    std::list<Vertex> listOfVertices;///< listofvertices used to store all the vertices of the 3d object in the form of list of vertices
+    std::list<std::tuple<Vertex,Vertex>> listOfEdges;///< listofEdges used to store all the edges of the 3d object in the form of list of tuples of tw0 vertices
+    std::list<std::list<Vertex>> listOfFaces;///<   listoffaces used to store all the faces of the 3d object in the form of listof list of vertices
+}
