@@ -12,7 +12,7 @@
 #include "Edge"
 #include "Face"
 
-class 3Dobject extend{
+class 3Dobject: public Object{
     public:
     std::list<Vertex> listOfVertices;
     std::list<Edge> listOfEdges;
