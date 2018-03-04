@@ -8,7 +8,7 @@
 #include "Edge"
 #include "Face"
 
-class 3Dobject{
+class 3Dobject extend{
     public:
     std::list<Vertex> listOfVertices;///< listofvertices used to store all the vertices of the 3d object in the form of list
     std::list<Edge> listOfEdges;///< listofEdges used to store all the vertecies of the 3d object in the form of list
