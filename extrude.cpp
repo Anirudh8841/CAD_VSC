@@ -10,15 +10,9 @@
 #include "2Dplane"
 #include "3Dobject"
 
-<<<<<<< HEAD
 using namespace std;
 
 3Dobject Extrude(int amount,2Dplane inputplane){
-=======
-
-
-Plane Extrude(int amount,2Dplane inputplane){
->>>>>>> 71b855b60bf54414d241586496859151a4434b95
     
     tuple <int, int, int> Normal;/*!<Normal vector representing in the form of tuple of x,y,z direction cosines. */ 
     

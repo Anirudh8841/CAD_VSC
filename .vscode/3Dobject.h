@@ -5,6 +5,7 @@
 #include "Face"
 
 class 3Dobject{
+    public:
     std::list<Vertex> listOfVertices;
     std::list<Edge> listOfEdges;
     std::list<Vertex> listOfFaces;
