@@ -5,7 +5,8 @@
             "includePath": [
                 "/usr/include",
                 "/usr/local/include",
-                "${workspaceRoot}"
+                "${workspaceRoot}",
+                "/usr/include/c++/4.2.1"
             ],
             "defines": [],
             "intelliSenseMode": "clang-x64",
