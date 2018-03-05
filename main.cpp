@@ -10,8 +10,8 @@
 *   -# As of version 1.0, implementation supports family of convex polyhedrals
 *   -# Save and load from a file
 *   -# Tranform between different views
-*       - Oblique 3D to isometric
-        - Isometric to orthographic views
+*       - Oblique 3D to isometric and back
+        - Isometric to orthographic views and back
 * 
 * \section Installation
 * \subsection Build from source code using cmake and make 
