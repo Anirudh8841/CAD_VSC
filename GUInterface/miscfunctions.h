@@ -33,3 +33,9 @@ bool inputFromFileClicked();
 *   \return true if input window is active
 */
 bool inputPanelActive();
+
+/*! User is offered with a list of task which this application can carry out. 
+\return Based on what user has selected this function returns corresponding int value.
+*/
+int actionToTake();
+
