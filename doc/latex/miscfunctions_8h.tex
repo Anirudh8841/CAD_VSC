@@ -1,0 +1,88 @@
+\hypertarget{miscfunctions_8h}{}\section{G\+U\+Interface/miscfunctions.h File Reference}
+\label{miscfunctions_8h}\index{G\+U\+Interface/miscfunctions.\+h@{G\+U\+Interface/miscfunctions.\+h}}
+{\ttfamily \#include $<$Qt$>$}\newline
+Include dependency graph for miscfunctions.\+h\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{miscfunctions_8h_a1edde83f6d3bea03514fbb09542fe3f3}{not\+\_\+\+Exit}} ()
+\item 
+String \mbox{\hyperlink{miscfunctions_8h_ac7682399bf04a2948729f25d6ec90f3e}{get\+File\+Source}} ()
+\item 
+int \mbox{\hyperlink{miscfunctions_8h_ac405dee311fab04d34f2ceb1183091e6}{get\+Output\+Format}} ()
+\item 
+bool \mbox{\hyperlink{miscfunctions_8h_a308c1019d3ee62e27207264885fd89fc}{input\+From\+File\+Clicked}} ()
+\item 
+bool \mbox{\hyperlink{miscfunctions_8h_a98dcee202a6d2b900d5616caf67eb3aa}{input\+Panel\+Active}} ()
+\item 
+int \mbox{\hyperlink{miscfunctions_8h_a3c1244d8e36fc0e62d03059b8f018e1b}{action\+To\+Take}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{miscfunctions_8h_a3c1244d8e36fc0e62d03059b8f018e1b}\label{miscfunctions_8h_a3c1244d8e36fc0e62d03059b8f018e1b}} 
+\index{miscfunctions.\+h@{miscfunctions.\+h}!action\+To\+Take@{action\+To\+Take}}
+\index{action\+To\+Take@{action\+To\+Take}!miscfunctions.\+h@{miscfunctions.\+h}}
+\subsubsection{\texorpdfstring{action\+To\+Take()}{actionToTake()}}
+{\footnotesize\ttfamily int action\+To\+Take (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+User is offered with a list of task which this application can carry out. \begin{DoxyReturn}{Returns}
+Based on what user has selected this function returns corresponding int value. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{miscfunctions_8h_ac7682399bf04a2948729f25d6ec90f3e}\label{miscfunctions_8h_ac7682399bf04a2948729f25d6ec90f3e}} 
+\index{miscfunctions.\+h@{miscfunctions.\+h}!get\+File\+Source@{get\+File\+Source}}
+\index{get\+File\+Source@{get\+File\+Source}!miscfunctions.\+h@{miscfunctions.\+h}}
+\subsubsection{\texorpdfstring{get\+File\+Source()}{getFileSource()}}
+{\footnotesize\ttfamily String get\+File\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function pops up a G\+UI from where user can navigate and select the \char`\"{}.\+txt\char`\"{} file containing user\textquotesingle{}s object as input. It takes no parameters \begin{DoxyReturn}{Returns}
+string object containing the address of the user\textquotesingle{}s file. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{miscfunctions_8h_ac405dee311fab04d34f2ceb1183091e6}\label{miscfunctions_8h_ac405dee311fab04d34f2ceb1183091e6}} 
+\index{miscfunctions.\+h@{miscfunctions.\+h}!get\+Output\+Format@{get\+Output\+Format}}
+\index{get\+Output\+Format@{get\+Output\+Format}!miscfunctions.\+h@{miscfunctions.\+h}}
+\subsubsection{\texorpdfstring{get\+Output\+Format()}{getOutputFormat()}}
+{\footnotesize\ttfamily int get\+Output\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function gets the information on what format does the user wants its output. It takes no parameters \begin{DoxyReturn}{Returns}
+int corresponding to the format selected by the user amongst the checklist of options
+\end{DoxyReturn}
+Options in the checklist would be -\/\+Save to a file\+: In this case user will be asked for the output file name preferred. -\/\+Isometric view\+: Isometric view of the user\textquotesingle{}s object will be rendered on the screen irrespective of whether user has input an object of class 2\+D\+Object or 3\+D\+Object. -\/\+Orthographic view\+: Application will draw orthographic view of the user\textquotesingle{}s object in case the input object was of class 3\+D\+Object Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{miscfunctions_8h_a308c1019d3ee62e27207264885fd89fc}\label{miscfunctions_8h_a308c1019d3ee62e27207264885fd89fc}} 
+\index{miscfunctions.\+h@{miscfunctions.\+h}!input\+From\+File\+Clicked@{input\+From\+File\+Clicked}}
+\index{input\+From\+File\+Clicked@{input\+From\+File\+Clicked}!miscfunctions.\+h@{miscfunctions.\+h}}
+\subsubsection{\texorpdfstring{input\+From\+File\+Clicked()}{inputFromFileClicked()}}
+{\footnotesize\ttfamily bool input\+From\+File\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function checks if the user has clicked the button for input through file
+
+Takes no parameters \begin{DoxyReturn}{Returns}
+whether checkbox for input from file has been checked or not 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{miscfunctions_8h_a98dcee202a6d2b900d5616caf67eb3aa}\label{miscfunctions_8h_a98dcee202a6d2b900d5616caf67eb3aa}} 
+\index{miscfunctions.\+h@{miscfunctions.\+h}!input\+Panel\+Active@{input\+Panel\+Active}}
+\index{input\+Panel\+Active@{input\+Panel\+Active}!miscfunctions.\+h@{miscfunctions.\+h}}
+\subsubsection{\texorpdfstring{input\+Panel\+Active()}{inputPanelActive()}}
+{\footnotesize\ttfamily bool input\+Panel\+Active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function checks if the input window is the active window on the user\textquotesingle{}s screen. \begin{DoxyReturn}{Returns}
+true if input window is active 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{miscfunctions_8h_a1edde83f6d3bea03514fbb09542fe3f3}\label{miscfunctions_8h_a1edde83f6d3bea03514fbb09542fe3f3}} 
+\index{miscfunctions.\+h@{miscfunctions.\+h}!not\+\_\+\+Exit@{not\+\_\+\+Exit}}
+\index{not\+\_\+\+Exit@{not\+\_\+\+Exit}!miscfunctions.\+h@{miscfunctions.\+h}}
+\subsubsection{\texorpdfstring{not\+\_\+\+Exit()}{not\_Exit()}}
+{\footnotesize\ttfamily bool not\+\_\+\+Exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function checks if close application event has been issued of not. Itakes no parameters. Here is the caller graph for this function\+:
+% FIG 6

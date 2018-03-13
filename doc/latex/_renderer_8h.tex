@@ -1,0 +1,43 @@
+\hypertarget{_renderer_8h}{}\section{G\+U\+Interface/\+Renderer.h File Reference}
+\label{_renderer_8h}\index{G\+U\+Interface/\+Renderer.\+h@{G\+U\+Interface/\+Renderer.\+h}}
+{\ttfamily \#include $<$Qt$>$}\newline
+Include dependency graph for Renderer.\+h\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_renderer_8h_a7a5f7fde5d0ebb2c1cb584117a3b6779}{render\+Orthographic}} (Orthographic object)
+\item 
+void \mbox{\hyperlink{_renderer_8h_aa188746f21f6ace24236ce3e60e8b089}{render3D}} (3\+D\+Object object)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_renderer_8h_aa188746f21f6ace24236ce3e60e8b089}\label{_renderer_8h_aa188746f21f6ace24236ce3e60e8b089}} 
+\index{Renderer.\+h@{Renderer.\+h}!render3D@{render3D}}
+\index{render3D@{render3D}!Renderer.\+h@{Renderer.\+h}}
+\subsubsection{\texorpdfstring{render3\+D()}{render3D()}}
+{\footnotesize\ttfamily void render3D (\begin{DoxyParamCaption}\item[{3\+D\+Object}]{object }\end{DoxyParamCaption})}
+
+It renders the 3D object on screen by first making a call to the screen\+Projection function which returns the 2D object which is then rendered on the screen. 
+\begin{DoxyParams}{Parameters}
+{\em object} & object to be rendered on screen\\
+\hline
+\end{DoxyParams}
+This function calls render2D with the return of screen\+Projection. Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{_renderer_8h_a7a5f7fde5d0ebb2c1cb584117a3b6779}\label{_renderer_8h_a7a5f7fde5d0ebb2c1cb584117a3b6779}} 
+\index{Renderer.\+h@{Renderer.\+h}!render\+Orthographic@{render\+Orthographic}}
+\index{render\+Orthographic@{render\+Orthographic}!Renderer.\+h@{Renderer.\+h}}
+\subsubsection{\texorpdfstring{render\+Orthographic()}{renderOrthographic()}}
+{\footnotesize\ttfamily void render\+Orthographic (\begin{DoxyParamCaption}\item[{Orthographic}]{object }\end{DoxyParamCaption})}
+
+It renders the orthographic views of the object on the screen. 
+\begin{DoxyParams}{Parameters}
+{\em object} & Orthographic object containing the coordinates corresponding to top, front and side views\\
+\hline
+\end{DoxyParams}
+Displays the three views adjacent to each other and labelled.
+
+Front and side views are displayed side by side with top view above the front view. Here is the caller graph for this function\+:
+% FIG 2
