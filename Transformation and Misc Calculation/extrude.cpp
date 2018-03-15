@@ -12,7 +12,7 @@
 
 using namespace std;
 
-3Dobject Extrude(float amount,2Dplane inputplane){
+ThreeDobject Extrude(float amount,TwoDplane inputplane){
     
     tuple <float, float, float> Normal;/*!<Normal vector representing in the form of tuple of x,y,z direction cosines. */ 
     
