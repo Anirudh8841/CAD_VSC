@@ -6,7 +6,7 @@
 #include "Vertex.h"
 
 type std::vector<float>(3) Vertex;
-class Object3D{
+class ThreeDobject{
     public: 
         std::vector<Vertex> VertexList;
         std::vector<std::std::vector<Vertex>(2)> EdgeList;
