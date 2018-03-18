@@ -1,4 +1,8 @@
-#include "Vertex.h"
+
+
+#ifndef OBJECT_H
+#define OBJECT_H
+
 
 
 class Object{
@@ -7,3 +11,4 @@ class Object{
         std::list<std::tuple<Vertex, Vertex > > EdgeList;
 };
 
+#endif

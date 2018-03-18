@@ -1,7 +1,7 @@
 #ifndef OBJECT2D_H
 #define OBJECT2D_H
 
-#include "Vertex.h"
+
 
 type std::vector<float>(3) Vertex;
 class Object2D{

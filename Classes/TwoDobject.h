@@ -2,7 +2,7 @@
 #ifndef TWODOBJECT_H
 #define TWODOBJECT_H
 
-#include "Vertex.h"
+
 
 
 class TwoDobject{

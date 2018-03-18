@@ -3,7 +3,7 @@
 #ifndef THREEDOBJECT_H
 #define THREEDOBJECT_H
 
-#include "Vertex.h"
+
 
 type std::vector<float>(3) Vertex;
 class Object3D{
