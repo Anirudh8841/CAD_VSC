@@ -4,7 +4,6 @@
 #define THREEDOBJECT_H
 
 
-
 type std::vector<float>(3) Vertex;
 class Object3D{
     public: 

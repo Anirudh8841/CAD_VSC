@@ -1,16 +1,19 @@
 
-#ifndef TWODOBJECT_H
-#define TWODOBJECT_H
+#ifndef TWODPLANE_H
+#define TWODPLANE_H
 
 
+type std::vector<float>(3) Vertex;
 
-
-class TwoDobject{
+class TwoDplane{
+	
     public: 
-        std::list<Vertex> VertexList;
-        std::list<std::tuple<Vertex, Vertex > > EdgeList;
+        std::vector<Vertex> VertexList;
+
+        std::tuple<int, int> EdgeList;
+
 };
 
-
 #endif
+
 
