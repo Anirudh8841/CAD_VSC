@@ -1,14 +1,21 @@
 
-
-#ifndef OBJECT_H
-#define OBJECT_H
-
+#ifndef OBJECT2D_H
+#define OBJECT2D_H
 
 
-class Object{
+
+
+type std::vector<float>(3) Vertex;
+class Object2D{
     public: 
-        std::list<Vertex> VertexList;
-        std::list<std::tuple<Vertex, Vertex > > EdgeList;
+        std::tuple<int, int> FrontEdgeList;
+        std::vector<int> FrontHiddenVertex;
+        std::tuple<int, int> TopEdgeList;
+        std::vector<int> TopHiddenVertex;
+        std::tuple<int, int> SideEdgeList;
+        std::vector<int> SideHiddenVertex;
+        std::vector<Vertex> VertexList;
+
 };
 
 #endif
