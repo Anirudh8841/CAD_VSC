@@ -14,7 +14,7 @@ using namespace std;
 
 ThreeDobject Extrude(float amount,TwoDplane inputplane){
     
-    tuple <float, float, float> Normal;/*!<Normal vector representing in the form of tuple of x,y,z direction cosines. */ 
+    vector<float> Normal(3); /*!<Normal vector representing in the form of tuple of x,y,z direction cosines. */ 
     
     
     Normal= normaldirection(inputplane);
