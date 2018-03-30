@@ -19,6 +19,6 @@ isometricFrom3D(Object3D obj)
     std::vector<float> firstMatMul(numVertex);
 	for(int i = 0; i < numVertex; i++)
 	{
-		firstMatMul[i] = betaMat[0][1] * 
+		firstMatMul[i] = betaMat[0][1] *  
 	}
 }
