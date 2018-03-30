@@ -1,16 +1,12 @@
-
-
 #ifndef THREEDOBJECT_H
 #define THREEDOBJECT_H
-
-#include "Vertex.h"
-
-type std::vector<float>(3) Vertex;
-class ThreeDobject{
+using namespace std;
+typedef std::vector<float> Vertex;
+class Object3D{
     public: 
-        std::vector<Vertex> VertexList;
-        std::vector<std::std::vector<Vertex>(2)> EdgeList;
-        std::vector<std::vector<Vertex>> FaceList;
+        std::vector<std::vector<float> > VertexList;
+        std::vector<std::vector<int> > EdgeList;
+        std::vector<std::vector<int> > FaceList;
 };
 
 #endif
