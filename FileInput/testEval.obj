@@ -1,0 +1,19 @@
+#Vertices
+v 0 0 0
+v 0 0 0
+v 0 0 0
+v 0 0 0
+v 0 0 0
+v 0 0 0
+v 0 0 0
+v 0 0 0
+#Faces 
+ usemtl Default 
+f 
+f 0 
+f 0 
+f 0 
+f 0 
+f 0 
+f 0 
+f 

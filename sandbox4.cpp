@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdio>
 #include <vector>
 using namespace std;
 
@@ -9,15 +10,10 @@ void getElement(std::vector<int> v, int i)
 }
 
 int main (){
-	string  x = "a, b, d, c, wer\n"
-
-	std::vector<int> gv(a, a + sizeof(a)/sizeof(*a));
-	cout << sizeof(a) << sizeof(*a);
-	for (int i = 0; i < gv.size(); i++) 
-	{
-		getElement(gv, i);
-		cout<< gv[i];
-	}
-
+	int i; 
+	int j;
+	scanf("%d", &i);
+	cin >> j;
+	cout << i << endl<< j;
 	return 0;
 }
