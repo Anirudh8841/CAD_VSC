@@ -1,0 +1,78 @@
+\hypertarget{parser_saver_8h}{}\section{File\+Input/parser\+Saver.h File Reference}
+\label{parser_saver_8h}\index{File\+Input/parser\+Saver.\+h@{File\+Input/parser\+Saver.\+h}}
+{\ttfamily \#include \char`\"{}3\+D\+Object\char`\"{}}\newline
+Include dependency graph for parser\+Saver.\+h\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{parser_saver_8h_ac3846b3e3fea5b7c5a20f67efbceeb07}{parse\+File\+And\+Make\+Object}} (std\+::\+String filename)
+\begin{DoxyCompactList}\small\item\em Parse file and make object of 3\+D\+Object class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{parser_saver_8h_a488c2c5db2681416015f12ced9d27e89}{£}} (3\+D\+Object object, std\+::\+String filename)
+\item 
+void \mbox{\hyperlink{parser_saver_8h_a502b27dd25b4b998af14b91e66780428}{write\+To\+File2D}} (2\+Dobject object, std\+::\+String filename)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{parser_saver_8h_ac3846b3e3fea5b7c5a20f67efbceeb07}\label{parser_saver_8h_ac3846b3e3fea5b7c5a20f67efbceeb07}} 
+\index{parser\+Saver.\+h@{parser\+Saver.\+h}!parse\+File\+And\+Make\+Object@{parse\+File\+And\+Make\+Object}}
+\index{parse\+File\+And\+Make\+Object@{parse\+File\+And\+Make\+Object}!parser\+Saver.\+h@{parser\+Saver.\+h}}
+\subsubsection{\texorpdfstring{parse\+File\+And\+Make\+Object()}{parseFileAndMakeObject()}}
+{\footnotesize\ttfamily parse\+File\+And\+Make\+Object (\begin{DoxyParamCaption}\item[{std\+::\+String}]{filename }\end{DoxyParamCaption})}
+
+
+
+Parse file and make object of 3\+D\+Object class. 
+
+This function reads a file and contructs a 3D object from it. Refer mathematical analysis doc files for the parsing convention used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & single argument which is the filename containing the object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em file\+Not\+Found} & in case no such file exists by the name user has defined \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+an object of 3\+D\+Object class \begin{quote}
+Note that filename should have \char`\"{}.\+txt\char`\"{} extension and formatted as per norms described in mathematical analysis docfiles.\end{quote}
+
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{parser_saver_8h_a502b27dd25b4b998af14b91e66780428}\label{parser_saver_8h_a502b27dd25b4b998af14b91e66780428}} 
+\index{parser\+Saver.\+h@{parser\+Saver.\+h}!write\+To\+File2D@{write\+To\+File2D}}
+\index{write\+To\+File2D@{write\+To\+File2D}!parser\+Saver.\+h@{parser\+Saver.\+h}}
+\subsubsection{\texorpdfstring{write\+To\+File2\+D()}{writeToFile2D()}}
+{\footnotesize\ttfamily void write\+To\+File2D (\begin{DoxyParamCaption}\item[{2\+Dobject}]{object,  }\item[{std\+::\+String}]{filename }\end{DoxyParamCaption})}
+
+Makes a file of \char`\"{}.\+txt\char`\"{} format using the norms defined in the mathematical analysis docfile for 3D object. 
+\begin{DoxyParams}{Parameters}
+{\em object} & 3D object to be saved. \\
+\hline
+{\em filename} & preferred name of the output file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void type. A file would be made with the name as defined by the filename parameter. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{parser_saver_8h_a488c2c5db2681416015f12ced9d27e89}\label{parser_saver_8h_a488c2c5db2681416015f12ced9d27e89}} 
+\index{parser\+Saver.\+h@{parser\+Saver.\+h}!£@{£}}
+\index{£@{£}!parser\+Saver.\+h@{parser\+Saver.\+h}}
+\subsubsection{\texorpdfstring{£()}{£()}}
+{\footnotesize\ttfamily void £ (\begin{DoxyParamCaption}\item[{3\+D\+Object}]{object,  }\item[{std\+::\+String}]{filename }\end{DoxyParamCaption})}
+
+Makes a file of \char`\"{}.\+txt\char`\"{} format using the norms defined in the mathematical analysis docfile for 3D object. 
+\begin{DoxyParams}{Parameters}
+{\em object} & 3D object to be saved. \\
+\hline
+{\em filename} & preferred name of the output file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void type. A file would be made with the name as defined by the filename parameter. 
+\end{DoxyReturn}
