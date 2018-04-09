@@ -11,6 +11,8 @@
 // #include <algorithm>
 #include "Object3D.h"
 #include "Object2D.h"
+#include "transform2D.h"
+#include "parserSaver.h"
 
 using namespace std;
 

@@ -102,3 +102,10 @@ std::vector<vector<float> > OrthographicConv(Object2D object)
 	return tempVertexList;
 }
 
+Object3D convert2DTo3D (Object2D object)
+{
+	Object3D x;
+	x.VertexList = vertices2DTo3D(object.topView.vertexList, object.frontView.vertexList, object.sideView.vertexList);
+	x.EdgeList = pEdgeList(object.topView, object.frontView, object.sideView);
+	return x;
+}

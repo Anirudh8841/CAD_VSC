@@ -27,4 +27,5 @@ void object3DToFile(Object3D object, std::string filename );
 */
 void writeToFile2D(Object2D object, std::string filename);
 
-Object2D fileToObject2D(string filename);
+void object2DToFile (Object2D object, string filename);
+bool doesEdgeExists(std::vector<std::vector<int> > EdgeList, std::vector<int> edge);
