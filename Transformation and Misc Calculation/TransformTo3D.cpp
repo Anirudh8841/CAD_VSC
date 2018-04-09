@@ -8,47 +8,47 @@
 /**
 	This function is written assuming that edges are stored in the the ascending order that is 
 */
-std::vector<int> possibleNbr(Object3D &object, int VertexNum)
-{
-	int numEdges = object->EdgeList.size();
-	std::vector<int> neighbours;
-	for (int i = 0; i < numEdges; i++)
-	{
-		if (object->EdgeList[i][0] == VertexNum)
-		{
-			neighbours.push_back(EdgeList[i][1]);
-		}
-		else if(object->EdgeList[i][1] == VertexNum)
-		{
-			neighbours.push_back(EdgeList[i][0]);
-		}
-	}
-	return neighbours;
-}
+// std::vector<int> possibleNbr(Object3D &object, int VertexNum)
+// {
+// 	int numEdges = object->EdgeList.size();
+// 	std::vector<int> neighbours;
+// 	for (int i = 0; i < numEdges; i++)
+// 	{
+// 		if (object->EdgeList[i][0] == VertexNum)
+// 		{
+// 			neighbours.push_back(EdgeList[i][1]);
+// 		}
+// 		else if(object->EdgeList[i][1] == VertexNum)
+// 		{
+// 			neighbours.push_back(EdgeList[i][0]);
+// 		}
+// 	}
+// 	return neighbours;
+// }
 
-std::vector<int> intersectionNbr(std::vector<int> &v1, std::vector<int> &v2)
-{
-	std::sort(v1->begin(), v1->end());
-	std::sort(v2->begin(), v2->end());
-	int numV1 = v1->size();
-	int numV2 = v2->size();
-	std::vector<int> returnVect;
-	for(int i = 0; i < numV1; i++)
-	{
-		for (int j = 0; j < numV2; j++)
-		{
-			if (v1[i] == v2[j])
-			{
-				returnVect.push_back(v1[i]);
-			}
-			else if(v2[j] > v1[i])
-			{
-				break;
-			}
-		}
-	}
-	return returnVect;
-}
+// std::vector<int> intersectionNbr(std::vector<int> &v1, std::vector<int> &v2)
+// {
+// 	std::sort(v1->begin(), v1->end());
+// 	std::sort(v2->begin(), v2->end());
+// 	int numV1 = v1->size();
+// 	int numV2 = v2->size();
+// 	std::vector<int> returnVect;
+// 	for(int i = 0; i < numV1; i++)
+// 	{
+// 		for (int j = 0; j < numV2; j++)
+// 		{
+// 			if (v1[i] == v2[j])
+// 			{
+// 				returnVect.push_back(v1[i]);
+// 			}
+// 			else if(v2[j] > v1[i])
+// 			{
+// 				break;
+// 			}
+// 		}
+// 	}
+// 	return returnVect;
+// }
 
 std::vector<vector<float> > OrthographicConv(Object2D object)
 {
