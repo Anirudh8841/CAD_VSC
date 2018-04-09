@@ -4,6 +4,9 @@
 #include <vector>
 #include <map>
 #include <string>
+
+#include <algorithm>
+
 #include <sstream>
 // #include <algorithm>
 #include "Object3D.h"
@@ -34,10 +37,12 @@ Object3D fileToObject3D(string filename)
     // std::map <string, int> VertexMap;
     Object3D obj;
     string line;
-    float x, y, z, num;
+
+    float x, y, z;
+    int num;
    	int initial, final, numVertex, numFaces;
     char lineStart;
-    cout << "about to open file";
+    cout << "about to open file\n";
     if (!inFile.good()) {
         cout << "Unable to open file";
         exit(1); // terminate with error
@@ -69,11 +74,13 @@ Object3D fileToObject3D(string filename)
 			{
 				face.push_back(num);
 			}
+			if (face.size() < 3)
+				continue;
 			obj.FaceList.push_back(face);
 			int j;
+			cout << face.size();
 			for(j = 0; j < face.size() - 1; j++)
-			{
-				
+			{	
 				std::vector<int> e;
 				e.push_back(face[j]);
 				e.push_back(face[j + 1]);
@@ -88,7 +95,7 @@ Object3D fileToObject3D(string filename)
 			}
 			std::vector<int> e;
 			e.push_back(face[j]);
-			e.push_back(face[j + 1]);
+			e.push_back(face[0]);
 			if (doesEdgeExists(obj.EdgeList, e)) 
 				obj.EdgeList.push_back(e);
     	}
@@ -101,19 +108,22 @@ void object3DToFile (Object3D object, string filename)
 {
 	fstream outFile(filename, fstream::out);
 	outFile << "#Vertices\n";
-	cout << "Written";
+	// cout << "Written";
 	int numVertex = object.VertexList.size();
 	for (int i = 0; i < numVertex; i++)
 	{
-		outFile << object.VertexList[i][0] << object.VertexList[i][1] << object.VertexList[i][2]<< object.VertexList[i][3] << "\n";
+		outFile << object.VertexList[i][1] << " " << object.VertexList[i][2]<< " " << object.VertexList[i][3] << "\n";
 	}
+
+	outFile << "\n#faces\n";
 	int numFaces = object.FaceList.size();
 	for (int i = 0; i < numFaces; i++)
 	{
 		int numVert = object.FaceList[i].size();
 		for (int j = 0; j < numVert; j++)
 		{
-			outFile << object.FaceList[i][numVert] << " ";
+
+			outFile << object.FaceList[i][j] << " ";
 		}
 		outFile << "\n";
 	}
@@ -123,9 +133,11 @@ void object3DToFile (Object3D object, string filename)
 
 int main() 
 {
-	cout << "about to call fileToObject3D";
+
+	cout << "about to call fileToObject3D\n";
 	Object3D object = fileToObject3D("test.txt");
 	object3DToFile(object, "asn.txt");
+	cout << "complete";
 	return 0;
 }
 
