@@ -1,8 +1,4 @@
 #include "helper_functions.h"
-
-
-
-
 	
 std::vector<std<::vector <float> > sortVertices (std::vector<std::vector<float> > vertexList)
 {	
@@ -134,3 +130,8 @@ View2D expandEdgeList(View2D* view)
 // 	}
 // }
 
+
+int main()
+{
+	
+}

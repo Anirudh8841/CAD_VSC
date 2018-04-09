@@ -9,4 +9,5 @@ class Object3D{
         std::vector<std::vector<float> > VertexList;
         std::vector<std::vector<int> > EdgeList;
         std::vector<std::vector<int> > FaceList;
+};
 #endif

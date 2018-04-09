@@ -2,19 +2,12 @@
 #ifndef OBJECT2D_H
 #define OBJECT2D_H
 
-
-
-
-typedef std::vector<float>(3) Vertex;
+#include "View2D.h"
 class Object2D{
     public: 
-        std::tuple<int, int> FrontEdgeList;
-        // std::vector<int> FrontHiddenVertex;
-        std::tuple<int, int> TopEdgeList;
-        // std::vector<int> TopHiddenVertex;
-        std::tuple<int, int> SideEdgeList;
-        // std::vector<int> SideHiddenVertex;
-        std::vector<Vertex> VertexList;
+        View2D topView;
+        View2D frontView;
+        View2D sideView;
 };
 
 #endif
