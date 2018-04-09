@@ -263,3 +263,74 @@ Object2D fileToObject2D(string filename)
 	inFile.close()
 	return object;
 }
+
+checkPrintVertexList(std::vector<std::vector<float> > lt)
+{
+	for (int i = 0; i < lt.size(); i++)
+	{
+		cout << lt[i][0] << " " << lt[i][1] << " " << lt[i][2] << '\n';
+	}
+}
+
+void object2DToFile (Object2D object, string filename)
+{
+	fstream outFile(filename, fstream::out);
+	checkPrintVertexList(object.topView.vertexList);
+	sort( object.topView.vertexList.begin( ), object.topView.vertexList.end( ), [ ](const auto& lhs, const auto& rhs)
+	{
+	   return lhs[0] < rhs[0];
+	}); 
+	checkPrintVertexList(object.topView.vertexList);
+
+	outFile << "#Top View\nVertex\n";
+	outFile << object.topView.vertexList.size();
+	outFile << '\n';
+	for (int i = 0; i < object.topView.vertexList.size(); i++)
+	{
+		outFile << object.topView.vertexList[i][0] << " " << object.topView.vertexList[i][1] << " " << object.topView.vertexList[i][2] << "\n";
+	}
+	outFile << '\nEdges\n';
+	outFile << object.topView.edgeList.size();
+	for (int i = 0; i < object.topView.edgeList.size(); i++)
+	{
+		outFile << object.topView.edgeList[i][0] << " " << object.topView.edgeList[i][1] << '\n';
+	}
+
+	outFile <<"#Front View\nVertices\n";
+	outFile << object.frontView.vertexList.size();
+	outFile << '\n';
+	sort( object.frontView.vertexList.begin( ), object.frontView.vertexList.end( ), [ ](const auto& lhs, const auto& rhs)
+	{
+	   return lhs[0] < rhs[0];
+	});
+	for (int i = 0; i < object.frontView.vertexList.size(); i++)
+	{
+		outFile << object.frontView.vertexList[i][0] << " " << object.frontView.vertexList[i][1] << " " << object.frontView.vertexList[i][2] << "\n";
+	}
+	outFile << '\nEdges\n';
+	outFile << object.frontView.edgeList.size();
+	for (int i = 0; i < object.frontView.edgeList.size(); i++)
+	{
+		outFile << object.frontView.edgeList[i][0] << " " << object.frontView.edgeList[i][1] << '\n';
+	}
+
+	
+	outFile <<"#Side View\nVertices\n";
+	outFile << object.sideView.vertexList.size();
+	outFile << '\n';
+	sort( object.sideView.vertexList.begin( ), object.sideView.vertexList.end( ), [ ](const auto& lhs, const auto& rhs)
+	{
+	   return lhs[0] < rhs[0];
+	});
+	for (int i = 0; i < object.sideView.vertexList.size(); i++)
+	{
+		outFile << object.sideView.vertexList[i][0] << " " << object.sideView.vertexList[i][1] << " " << object.sideView.vertexList[i][2] << "\n";
+	}
+	outFile << '\nEdges\n';
+	outFile << object.sideView.edgeList.size();
+	for (int i = 0; i < object.sideView.edgeList.size(); i++)
+	{
+		outFile << object.sideView.edgeList[i][0] << " " << object.sideView.edgeList[i][1] << '\n';
+	}
+	outFile.close();
+}

@@ -87,21 +87,26 @@ std::vector<std::vector<int> > pEdgeList(View2D topView, View2D frontView , View
 	return plist;
 }
 
-View2D expandEdgeList(View2D* view)
+std::vector<std::vector<int> > expandEdgeList(View2D view)
 {
-	for(int i = 0; i < view->vertexList.size(); i++)
+	std::vector<std::vector<int> > edlist;
+	
+	for(int i = 0; i < view.edgeList.size(); i++)
+		edlist.push_back(view.edgeList[i]);
+
+	for(int i = 0; i < view.vertexList.size(); i++)
 	{
-		for(int j = 0; j < view->vertexList.size(); j++)
+		for(int j = 0; j < view.vertexList.size(); j++)
 		{
-			ifView ((view->vertexList[i][2] == view->vertexList[j][2]) && (view->vertexList[i][1] == view->vertexList[j][1]))
+			ifView ((view.vertexList[i][2] == view.vertexList[j][2]) && (view.vertexList[i][1] == view.vertexList[j][1]))
 			{
 				std::vector<int> tempEdge;
-				tempEdge.push_back(view->vertexList[i][0]);
-				view->edgeList.push_back(view->vertexList[j][0]);
+				tempEdge.push_back(view.vertexList[i][0]);
+				view.edgeList.push_back(view.vertexList[j][0]);
 			}
 		}
 	}
-	return tempEdge;
+	return edlist;
 }
 
 // auto rer(std::vector<std::vector<int> > pList, std::vector<std::vector<float> > vList)
@@ -131,7 +136,4 @@ View2D expandEdgeList(View2D* view)
 // }
 
 
-int main()
-{
-	
-}
+
