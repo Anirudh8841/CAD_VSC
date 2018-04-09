@@ -1,5 +1,5 @@
 #include "helper_functions.h"
-	
+#include <algorithm>
 
 std::vector<std::vector <float> > sortVertices (std::vector<std::vector<float> > vertexList)
 {	
@@ -28,7 +28,7 @@ std::vector<std::vector<float> > vertices2DTo3D (std::vector<std::vector<float> 
  	std::vector<std::vector<float> > vertexList3D;
  	for(int i = 0; i < Topverlist.size(); i++)
  	{
- 		for(int j = 0; j < frontverlist.size(); j++)
+ 		for(int j = 0; j < Frontverlist.size(); j++)
  		{
  			if(Topverlist[i][0] == Frontverlist[j][0])
  			{

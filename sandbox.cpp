@@ -138,6 +138,8 @@ int main()
 	Object3D object = fileToObject3D("test.txt");
 	object3DToFile(object, "asn.txt");
 	cout << "complete";
+	Object2D obj = convert3DTo2D(object);
+	object2DToFile(obj, "orthographic.txt");
 	return 0;
 }
 
