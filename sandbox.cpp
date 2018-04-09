@@ -4,6 +4,7 @@
 #include <vector>
 #include <map>
 #include <string>
+#include <algorithm>
 #include <sstream>
 // #include <algorithm>
 #include "Object3D.h"
@@ -109,8 +110,10 @@ void object3DToFile (Object3D object, string filename)
 	int numVertex = object.VertexList.size();
 	for (int i = 0; i < numVertex; i++)
 	{
-		outFile << object.VertexList[i][0] << object.VertexList[i][1] << object.VertexList[i][2]<< object.VertexList[i][3] << "\n";
+		outFile << object.VertexList[i][1] << " " << object.VertexList[i][2]<< " " << object.VertexList[i][3] << "\n";
 	}
+
+	outFile << "\n#faces\n";
 	int numFaces = object.FaceList.size();
 	for (int i = 0; i < numFaces; i++)
 	{

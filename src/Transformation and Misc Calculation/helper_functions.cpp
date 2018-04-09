@@ -1,6 +1,6 @@
 #include "helper_functions.h"
 	
-std::vector<std<::vector <float> > sortVertices (std::vector<std::vector<float> > vertexList)
+std::vector<std::vector <float> > sortVertices (std::vector<std::vector<float> > vertexList)
 {	
 	sort( vertexList.begin( ), vertexList.end( ), [ ](const auto& lhs, const auto& rhs)
 	{
@@ -21,13 +21,13 @@ std::vector<std<::vector <float> > sortVertices (std::vector<std::vector<float> 
 	return vertexList;
 }
 
-std::vector<std<::vector<float> > vertices2DTo3D (std::vector<std::vector<float> > Topverlist,
+std::vector<std::vector<float> > vertices2DTo3D (std::vector<std::vector<float> > Topverlist,
  std::vector<std::vector<float> > Frontverlist, std::vector<std::vector<float> > Sideverlist)
  {
  	std::vector<std::vector<float> > vertexList3D;
  	for(int i = 0; i < Topverlist.size(); i++)
  	{
- 		for(int j = 0; j < frontverlist.size(); j++)
+ 		for(int j = 0; j < Frontverlist.size(); j++)
  		{
  			if(Topverlist[i][0] == Frontverlist[j][0])
  			{
@@ -43,11 +43,120 @@ std::vector<std<::vector<float> > vertices2DTo3D (std::vector<std::vector<float>
  }
 
 
+std::vector<std::vector<int> > expandEdgeList(View2D view)
+{
+	std::vector<std::vector<int> > edlist;
+	
+	for(int i = 0; i < view.edgeList.size(); i++)
+		edlist.push_back(view.edgeList[i]);
+
+	for(int i = 0; i < view.vertexList.size(); i++)
+	{
+		for(int j = 0; j < view.vertexList.size(); j++)
+		{
+			if((view.vertexList[i][2] == view.vertexList[j][2]) && (view.vertexList[i][1] == view.vertexList[j][1]))
+			{
+				// std::vector<int> tempEdge;
+				// tempEdge.push_back(view.vertexList[i][0]);
+				// edlist.push_back(view.vertexList[j][0]);
+				// std::vector<int> neighbourList;
+				for(int m = 0; m < view.edgeList.size(); m++)
+				{
+					if (view.edgeList[m][0] == (int)view.vertexList[i][0])
+					{
+						std::vector<int> e;
+						e.push_back((int)view.vertexList[j][0]);
+						e.push_back(view.edgeList[m][1]);
+						edlist.push_back(e);
+					}
+					if (view.edgeList[m][0] == (int)view.vertexList[j][0])
+					{	
+						std::vector<int> e;
+						e.push_back((int)view.vertexList[i][0]);
+						e.push_back(view.edgeList[m][1]);
+						edlist.push_back(e);
+					}
+					if (view.edgeList[m][1] == (int)view.vertexList[i][0])
+					{
+						std::vector<int> e;
+						e.push_back((int)view.vertexList[j][0]);
+						e.push_back(view.edgeList[m][0]);
+						edlist.push_back(e);
+					}
+					if (view.edgeList[m][1] == (int)view.vertexList[j][0])
+					{	
+						std::vector<int> e;
+						e.push_back((int)view.vertexList[i][0]);
+						e.push_back(view.edgeList[m][0]);
+						edlist.push_back(e);
+					}
+
+				}
+
+				std::vector<int> e;
+				e.push_back((int)view.vertexList[i][0]);
+				e.push_back((int)view.vertexList[j][0]);
+				edlist.push_back(e);
+			}
+		}
+	}
+	return edlist;
+}
+
+				// for(int m = 0; m < view.edgeList.size(); m++)
+				// {
+				// 	if (view.edgeList[m][0] == view.vertexList[i][0])
+				// 	{
+				// 		neighbourList.push_back(view.edgeList[m][1]);
+				// 	}
+				// 	else if (view.edgeList[m][1] == view.vertexList[i][0])
+				// 	{
+				// 		neighbourList.push_back(view.edgeList[m][0]);
+				// 	}
+				// }
+				// for (int m = 0; m < neighbourList.size(); m++)
+				// {
+				// 	if (neighbourList[m] != view.vertexList[j][0])
+				// 	{
+				// 		std::vector<int> e;
+				// 		e.push_back(neighbourList[m]);
+				// 		e.push_back(view.vertexList[j][0]);
+				// 		edlist.push_back(e);
+				// 	}
+// 				// }
+
+// 				for(int m = 0; m < view.edgeList.size(); m++)
+// 				{
+// 					if (view.edgeList[m][0] == view.vertexList[j][0])
+// 					{
+// 						neighbourList.push_back(view.edgeList[m][1]);
+// 					}
+// 					else if (view.edgeList[m][1] == view.vertexList[i][0])
+// 					{
+// 						neighbourList.push_back(view.edgeList[m][0]);
+// 					}
+// 				}
+// 				for (int m =0; m < neighbourList.size(); m++)
+// 				{
+// 					if (neighbourList[m] != view.vertexList[i][0])
+// 					{
+// 						std::vector<int> e;
+// 						e.push_back(neighbourList[m]);
+// 						e.push_back(view.vertexList[j][0]);
+// 					}
+// 				}
+
+// 			}
+// 		}
+// 	}
+// 	return edlist;
+// }
+
 std::vector<std::vector<int> > pEdgeList(View2D topView, View2D frontView , View2D sideView)
 {
-	topViewCompEdge = expandEdgeList(topView);
-	frontViewCompEdge = expandEdgeList(frontView);
-	sideViewCompEdge = expandEdgeList(sideView);
+	std::vector<std::vector<int> > topViewCompEdge = expandEdgeList(topView);
+	std::vector<std::vector<int> > frontViewCompEdge = expandEdgeList(frontView);
+	std::vector<std::vector<int> > sideViewCompEdge = expandEdgeList(sideView);
 	std::vector<std::vector<int> > plist;
 	bool matchtf, matchts;
 	for (int i = 0; i < topViewCompEdge.size(); i++)
@@ -56,7 +165,7 @@ std::vector<std::vector<int> > pEdgeList(View2D topView, View2D frontView , View
 		matchts = false;
 		for (int j = 0; j < frontViewCompEdge.size(); j++)
 		{
-			if ((topViewCompEdge[i][0] == frontViewCompEdge[j][0]) && (topViewCompEdge[i][0] == frontViewCompEdge[j][0]))
+			if ((topViewCompEdge[i][0] == frontViewCompEdge[j][0]) && (topViewCompEdge[i][1] == frontViewCompEdge[j][1]))
 			{
 				matchtf = true;
 			}
@@ -67,7 +176,7 @@ std::vector<std::vector<int> > pEdgeList(View2D topView, View2D frontView , View
 		}
 		for (int j = 0; j < sideViewCompEdge.size(); j++)
 		{
-			if ((topViewCompEdge[i][0] == sideViewCompEdge[j][0]) && (topViewCompEdge[i][0] == sideViewCompEdge[j][0]))
+			if ((topViewCompEdge[i][0] == sideViewCompEdge[j][0]) && (topViewCompEdge[i][1] == sideViewCompEdge[j][1]))
 			{
 				matchts = true;
 			}
@@ -85,28 +194,6 @@ std::vector<std::vector<int> > pEdgeList(View2D topView, View2D frontView , View
 		}
 	}
 	return plist;
-}
-
-std::vector<std::vector<int> > expandEdgeList(View2D view)
-{
-	std::vector<std::vector<int> > edlist;
-	
-	for(int i = 0; i < view.edgeList.size(); i++)
-		edlist.push_back(view.edgeList[i]);
-
-	for(int i = 0; i < view.vertexList.size(); i++)
-	{
-		for(int j = 0; j < view.vertexList.size(); j++)
-		{
-			ifView ((view.vertexList[i][2] == view.vertexList[j][2]) && (view.vertexList[i][1] == view.vertexList[j][1]))
-			{
-				std::vector<int> tempEdge;
-				tempEdge.push_back(view.vertexList[i][0]);
-				view.edgeList.push_back(view.vertexList[j][0]);
-			}
-		}
-	}
-	return edlist;
 }
 
 // auto rer(std::vector<std::vector<int> > pList, std::vector<std::vector<float> > vList)
