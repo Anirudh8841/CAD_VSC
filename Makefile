@@ -1,10 +1,11 @@
-IDIR =/../Includes 
+IDIR =./Includes 
 CC=g++ -std=c++14
 CFLAGS=-I$(IDIR)
 
 ODIR=obj
 LDIR =../results
-VPATH = src Includes
+vpath %.h Includes
+vpath %.cpp src src/FileInput
 
 # _DEPS = helper_functions.h Object2D.h Object3D.h parserSaver.h transform2D.h transform3D.h View2D.h
 # DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
@@ -13,14 +14,14 @@ VPATH = src Includes
 # OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 
-main: main.o parserSaver.o
-	$(CC) -I$(IDIR) -o main.o parserSaver.o
+main: main.o parserSaver.o 
+	$(CC) -I$(IDIR) -o main main.o parserSaver.o
 
-main.o: Object2D.h Object3D.h parserSaver.h
-	$(CC) -I$(IDIR) -c main.cpp
+main.o: Includes/Object2D.h Includes/Object3D.h Includes/parserSaver.h
+	$(CC) -I$(IDIR) -c src/FileInput/main.cpp
 
-parserSaver.o: Object3D.h Object2D.h
-	$(CC) -I$(IDIR) -c parserSaver.cpp
+parserSaver.o: Includes/Object3D.h Includes/Object2D.h
+	$(CC) -I$(IDIR) -c src/FileInput/parserSaver.cpp
 
 
 

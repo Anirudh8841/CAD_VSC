@@ -275,7 +275,7 @@ void object2DToFile (Object2D object, string filename)
 	{
 		outFile << object.topView.vertexList[i][0] << " " << object.topView.vertexList[i][1] << " " << object.topView.vertexList[i][2] << "\n";
 	}
-	outFile << '\nEdges\n';
+	outFile << "\nEdges\n";
 	outFile << object.topView.edgeList.size();
 	for (int i = 0; i < object.topView.edgeList.size(); i++)
 	{
@@ -293,7 +293,7 @@ void object2DToFile (Object2D object, string filename)
 	{
 		outFile << object.frontView.vertexList[i][0] << " " << object.frontView.vertexList[i][1] << " " << object.frontView.vertexList[i][2] << "\n";
 	}
-	outFile << '\nEdges\n';
+	outFile << "\nEdges\n";
 	outFile << object.frontView.edgeList.size();
 	for (int i = 0; i < object.frontView.edgeList.size(); i++)
 	{
@@ -344,7 +344,7 @@ void object3DToFile (Object3D object, string filename)
 		outFile << "\n";
 	}
 	// cout << "Function end";
-	
+
 	outFile.close();
 }
 
