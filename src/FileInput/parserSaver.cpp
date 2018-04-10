@@ -232,7 +232,7 @@ Object2D fileToObject2D(string filename)
 		for (int i = 0; i < numVertex; i++)
 		{
 			inFile >> x >> y;
-			std::vector<float> tempVect();
+			std::vector<float> tempVect;
 			tempVect.push_back(i + 1);
 			tempVect.push_back(x);
 			tempVect.push_back(y);
@@ -248,41 +248,26 @@ Object2D fileToObject2D(string filename)
 		for (int i = 0; i < numEdges; i++)
 		{
 			cin >> y >> z;
-			std::vector<int> tempVect();
+			std::vector<int> tempVect;
 			tempVect.push_back(i + 1);
 			tempVect.push_back(y);
 			tempVect.push_back(z);
 			if (i == 0)
-				object.topView.edgeiList.push_back(tempVect);
+				object.topView.edgeList.push_back(tempVect);
 			else if ( i == 1)
 				object.frontView.edgeList.push_back(tempVect);
 			else 
 				object.sideView.edgeList.push_back(tempVect);
 		}		
 	}
-	inFile.close()
+	inFile.close();
 	return object;
 }
 
 
-checkPrintVertexList(std::vector<std::vector<float> > lt)
-{
-	for (int i = 0; i < lt.size(); i++)
-	{
-		cout << lt[i][0] << " " << lt[i][1] << " " << lt[i][2] << '\n';
-	}
-}
-
 void object2DToFile (Object2D object, string filename)
 {
 	fstream outFile(filename, fstream::out);
-	checkPrintVertexList(object.topView.vertexList);
-	sort( object.topView.vertexList.begin( ), object.topView.vertexList.end( ), [ ](const auto& lhs, const auto& rhs)
-	{
-	   return lhs[0] < rhs[0];
-	}); 
-	checkPrintVertexList(object.topView.vertexList);
-
 	outFile << "#Top View\nVertex\n";
 	outFile << object.topView.vertexList.size();
 	outFile << '\n';
@@ -358,7 +343,8 @@ void object3DToFile (Object3D object, string filename)
 		}
 		outFile << "\n";
 	}
-	cout << "Function end";
+	// cout << "Function end";
+	
 	outFile.close();
 }
 
@@ -382,7 +368,7 @@ bool doesEdgeExists(std::vector<std::vector<int> > EdgeList, std::vector<int> ed
 
 Object3D fileToObject3D(string filename)   
 {
-	cout << "inside function";
+	// cout << "inside function";
     fstream inFile(filename, fstream::in);
     // std::map <string, int> VertexMap;
     Object3D obj;
@@ -391,12 +377,12 @@ Object3D fileToObject3D(string filename)
     int num;
    	int initial, final, numVertex, numFaces;
     char lineStart;
-    cout << "about to open file\n";
+    // cout << "about to open file\n";
     if (!inFile.good()) {
-        cout << "Unable to open file";
+        // cout << "Unable to open file";
         exit(1); // terminate with error
     }
-    cout << "file opened";
+    // cout << "file opened";
     inFile >> numVertex;
 
     for (int i = 0; i < numVertex; i++)
@@ -422,13 +408,13 @@ Object3D fileToObject3D(string filename)
 			while(ss >> num)
 			{
 				face.push_back(num);
-				cout << num << '\n';
+				// cout << num << '\n';
 			}
 			if (face.size() < 3)
 				continue;
 			obj.FaceList.push_back(face);
 			int j;
-			cout << face.size();
+			// cout << face.size();
 			for(j = 0; j < face.size() - 1; j++)
 			{	
 				std::vector<int> e;

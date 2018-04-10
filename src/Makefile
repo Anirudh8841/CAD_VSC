@@ -1,22 +1,27 @@
 IDIR =../include
-CC=g++ -std=gnu++11
+CC=g++ -std=c++14
 CFLAGS=-I$(IDIR)
 
 ODIR=obj
-LDIR =../lib
+LDIR =../results
 
-_DEPS = body_loop.h 3d_to_2d.h Object_3d.h Full_plane.h object_2d.h structs.h general_methods.h planar_graph_generator.h faceloop_generator.h
-DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
+# _DEPS = helper_functions.h Object2D.h Object3D.h parserSaver.h transform2D.h transform3D.h View2D.h
+# DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = main.o body_loop.o 3d_to_2d.o Full_plane.o planar_graph_generator.o structs.o object_2d.o Object_3d.o general_methods.o faceloop_generator.o
-OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
+# _OBJ = main.o body_loop.o 3d_to_2d.o Full_plane.o planar_graph_generator.o structs.o object_2d.o Object_3d.o general_methods.o faceloop_generator.o
+# OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 
-$(ODIR)/%.o: %.cpp $(DEPS)
-	$(CC) -c -o $@ $< $(CFLAGS)
+main: main.o parserSaver.o
+	$(CC) -I$(IDIR) -o main.o parserSaver.o
 
-Run: $(OBJ)
-	g++ -o $@ $^ $(CFLAGS)
+main.o: Object2D.h Object3D.h parserSaver.h
+	$(CC) -I$(IDIR) -c main.cpp
+
+parserSaver.o: Object3D.h Object2D.h
+	$(CC) -I$(IDIR) -c parserSaver.cpp
+
+
 
 # .PHONY: clean
 
