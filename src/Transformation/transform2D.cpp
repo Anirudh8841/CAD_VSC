@@ -1,7 +1,7 @@
 #include <algorithm>
 #include <vector>
-#include "transformTo2D"
-#include "transformTo3D"
+#include "transform2D.h"
+// #include "transform3D.h"
 using namespace std;
 
 /** axis:
@@ -69,7 +69,7 @@ Object2D convert3DTo2D (Object3D object)
 	//Making vertices in 2D
 	for (int i = 0; i < object.VertexList.size(); i++)
 	{
-		std::vector<int> v;
+		std::vector<float> v;
 		v.push_back(object.VertexList[i][0]);
 		v.push_back(object.VertexList[i][1]);
 		v.push_back(object.VertexList[i][2]);
@@ -86,12 +86,18 @@ Object2D convert3DTo2D (Object3D object)
 
 	for (int i = 0; i < object.EdgeList.size(); i++)
 	{
-		tempObj.topView.edgeList.pushback(object.EdgeList[i][0]);
-		tempObj.topView.edgeList.pushback(object.EdgeList[i][1]);
-		tempObj.frontView.edgeList.pushback(object.EdgeList[i][0]);
-		tempObj.frontView.edgeList.pushback(object.EdgeList[i][1]);
-		tempObj.sideView.edgeList.pushback(object.EdgeList[i][0]);
-		tempObj.sideView.edgeList.pushback(object.EdgeList[i][1]);
+		std::vector<int> et;
+		et.push_back(object.EdgeList[i][0]);
+		et.push_back(object.EdgeList[i][1]);
+		tempObj.topView.edgeList.push_back(et);
+		std::vector<int> ef;
+		ef.push_back(object.EdgeList[i][0]);
+		ef.push_back(object.EdgeList[i][1]);
+		tempObj.frontView.edgeList.push_back(ef);
+		std::vector<int> es;
+		es.push_back(object.EdgeList[i][0]);
+		es.push_back(object.EdgeList[i][1]);
+		tempObj.sideView.edgeList.push_back(es);
 
 	}
 	return tempObj;

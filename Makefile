@@ -17,6 +17,9 @@ vpath %.cpp src src/FileInput
 main: main.o parserSaver.o 
 	$(CC) -I$(IDIR) -o main main.o parserSaver.o
 
+# transform2D.o:
+# 	$(CC) -I$(IDIR) -c transform2D.o src/Transformation/transform2D.cpp
+
 main.o: Includes/Object2D.h Includes/Object3D.h Includes/parserSaver.h
 	$(CC) -I$(IDIR) -c src/FileInput/main.cpp
 
