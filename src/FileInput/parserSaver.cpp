@@ -332,16 +332,22 @@ void object3DToFile (Object3D object, string filename)
 		outFile << object.VertexList[i][1] << " " << object.VertexList[i][2]<< " " << object.VertexList[i][3] << "\n";
 	}
 
-	outFile << "\n#faces\n";
-	int numFaces = object.FaceList.size();
-	for (int i = 0; i < numFaces; i++)
+	// outFile << "\n#faces\n";
+	// int numFaces = object.FaceList.size();
+	// for (int i = 0; i < numFaces; i++)
+	// {
+	// 	int numVert = object.FaceList[i].size();
+	// 	for (int j = 0; j < numVert; j++)
+	// 	{
+	// 		outFile << object.FaceList[i][j] << " ";
+	// 	}
+	// 	outFile << "\n";
+	// }
+	outFile << "\n edges \n";
+	int numEdges = object.EdgeList.size();
+	for (int i = 0; i < numEdges; i++)
 	{
-		int numVert = object.FaceList[i].size();
-		for (int j = 0; j < numVert; j++)
-		{
-			outFile << object.FaceList[i][j] << " ";
-		}
-		outFile << "\n";
+		outFile << object.EdgeList[i][0] << " " << object.EdgeList[i][1] << "\n";
 	}
 	// cout << "Function end";
 
@@ -418,6 +424,7 @@ Object3D fileToObject3D(string filename)
 			for(j = 0; j < face.size() - 1; j++)
 			{	
 				std::vector<int> e;
+				// e.push_back(j);
 				e.push_back(face[j]);
 				e.push_back(face[j + 1]);
 				if (doesEdgeExists(obj.EdgeList, e))
@@ -427,12 +434,13 @@ Object3D fileToObject3D(string filename)
 				else
 				{
 					obj.EdgeList.push_back(e);
+
 				}
 			}
 			std::vector<int> e;
 			e.push_back(face[j]);
 			e.push_back(face[0]);
-			if (doesEdgeExists(obj.EdgeList, e)) 
+			if (!doesEdgeExists(obj.EdgeList, e)) 
 				obj.EdgeList.push_back(e);
     	}
     }

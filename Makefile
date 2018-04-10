@@ -24,7 +24,8 @@ parserSaver.o: Includes/Object3D.h Includes/Object2D.h
 	$(CC) -I$(IDIR) -c src/FileInput/parserSaver.cpp
 
 
-
+clean:
+	rm main *.o
 # .PHONY: clean
 
 # clean:
