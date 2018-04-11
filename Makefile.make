@@ -13,26 +13,25 @@ vpath %.cpp src src/FileInput
 
 
 bin/main: bin/main.o bin/parserSaver.o bin/transform2D.o bin/helper_functions.o bin/transform3D.o
-	$(CC) -I$(IDIR) -o bin/main bin/main.o bin/parserSaver.o bin/transform2D.o bin/transform3D.o bin/helper_functions.o
+	$(CC) -I$(IDIR) -o main main.o parserSaver.o transform2D.o transform3D.o helper_functions.o
 
 bin/main.o: Includes/Object2D.h Includes/Object3D.h Includes/parserSaver.h Includes/transform2D.h Includes/transform3D.h
-	$(CC) -I$(IDIR) -c -o bin/main.o src/FileInput/main.cpp
+	$(CC) -I$(IDIR) -c src/FileInput/main.cpp
 
 bin/parserSaver.o: Includes/Object3D.h Includes/Object2D.h
-	$(CC) -I$(IDIR) -c -o bin/parserSaver.o src/FileInput/parserSaver.cpp
+	$(CC) -I$(IDIR) -c src/FileInput/parserSaver.cpp
 
 bin/transform2D.o: Includes/transform2D.h
-	$(CC) -I$(IDIR) -c -o bin/transform2D.o src/Transformation/transform2D.cpp
+	$(CC) -I$(IDIR) -c src/Transformation/transform2D.cpp
 
 bin/transform3D.o: Includes/transform3D.h Includes/helper_functions.h Includes/Object2D.h Includes/Object3D.h
-	$(CC) -I$(IDIR) -c -o bin/transform3D.o src/Transformation/transform3D.cpp
+	$(CC) -I$(IDIR) -c src/Transformation/transform3D.cpp
 
 bin/helper_functions.o: Includes/helper_functions.h Includes/Object2D.h Includes/Object3D.h
-	$(CC) -I$(IDIR) -c -o bin/helper_functions.o src/Transformation/helper_functions.cpp 
+	$(CC) -I$(IDIR) -c src/Transformation/helper_functions.cpp 
 
 clean:
-	rm bin/*.o 
-	rm bin/main
+	rm main *.o
 # .PHONY: clean
 
 # clean:
