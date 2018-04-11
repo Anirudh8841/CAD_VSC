@@ -268,7 +268,7 @@ Object2D fileToObject2D(string filename)
 void object2DToFile (Object2D object, string filename)
 {
 	fstream outFile(filename, fstream::out);
-	outFile << "#Top View\nVertex\n";
+	outFile << "\n#Top View\nVertex\n";
 	outFile << object.topView.vertexList.size();
 	outFile << '\n';
 	for (int i = 0; i < object.topView.vertexList.size(); i++)
@@ -277,12 +277,13 @@ void object2DToFile (Object2D object, string filename)
 	}
 	outFile << "\nEdges\n";
 	outFile << object.topView.edgeList.size();
+	outFile << "\n";
 	for (int i = 0; i < object.topView.edgeList.size(); i++)
 	{
 		outFile << object.topView.edgeList[i][0] << " " << object.topView.edgeList[i][1] << '\n';
 	}
 
-	outFile <<"#Front View\nVertices\n";
+	outFile <<"\n#Front View\nVertices\n";
 	outFile << object.frontView.vertexList.size();
 	outFile << '\n';
 	sort( object.frontView.vertexList.begin( ), object.frontView.vertexList.end( ), [ ](const auto& lhs, const auto& rhs)
@@ -295,13 +296,14 @@ void object2DToFile (Object2D object, string filename)
 	}
 	outFile << "\nEdges\n";
 	outFile << object.frontView.edgeList.size();
+	outFile << "\n";
 	for (int i = 0; i < object.frontView.edgeList.size(); i++)
 	{
 		outFile << object.frontView.edgeList[i][0] << " " << object.frontView.edgeList[i][1] << '\n';
 	}
 
 	
-	outFile <<"#Side View\nVertices\n";
+	outFile <<"\n#Side View\nVertices\n";
 	outFile << object.sideView.vertexList.size();
 	outFile << '\n';
 	sort( object.sideView.vertexList.begin( ), object.sideView.vertexList.end( ), [ ](const auto& lhs, const auto& rhs)
@@ -312,8 +314,9 @@ void object2DToFile (Object2D object, string filename)
 	{
 		outFile << object.sideView.vertexList[i][0] << " " << object.sideView.vertexList[i][1] << " " << object.sideView.vertexList[i][2] << "\n";
 	}
-	outFile << '\nEdges\n';
+	outFile << "\nEdges\n";
 	outFile << object.sideView.edgeList.size();
+	outFile << "\n";
 	for (int i = 0; i < object.sideView.edgeList.size(); i++)
 	{
 		outFile << object.sideView.edgeList[i][0] << " " << object.sideView.edgeList[i][1] << '\n';
@@ -329,7 +332,7 @@ void object3DToFile (Object3D object, string filename)
 	int numVertex = object.VertexList.size();
 	for (int i = 0; i < numVertex; i++)
 	{
-		outFile << object.VertexList[i][1] << " " << object.VertexList[i][2]<< " " << object.VertexList[i][3] << "\n";
+		outFile << object.VertexList[i][0] << " " << object.VertexList[i][1] << " " << object.VertexList[i][2]<< " " << object.VertexList[i][3] << "\n";
 	}
 
 	// outFile << "\n#faces\n";

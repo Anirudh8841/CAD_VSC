@@ -1,5 +1,8 @@
 #include "helper_functions.h"
 #include <algorithm>
+#include "Object3D.h"
+#include "Object2D.h"
+
 
 std::vector<std::vector <float> > sortVertices (std::vector<std::vector<float> > vertexList)
 {	
@@ -224,4 +227,27 @@ std::vector<std::vector<int> > pEdgeList(View2D topView, View2D frontView , View
 // 		}
 // 	}
 // }
+
+std::vector<std::vector<int> > removeDuplicate (std::vector<std::vector<int> > edlist)
+{
+	
+	for (int i = 0; i < edlist.size(); i++)
+	{
+		for (int j = 0; j < edlist.size(); j++)
+		{
+			if (edlist[i][0] == edlist[j][0] && edlist[i][1] == edlist[j][1])
+			{
+				edlist.erase(edlist.begin() + i);
+			}
+			if (edlist[i][1] == edlist[j][0] && edlist[i][0] == edlist[j][1])
+			{
+				edlist.erase(edlist.begin() + i);
+			}
+		}
+	}
+	return edlist;
+}
+
+
+
 

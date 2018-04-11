@@ -17,4 +17,6 @@ std::vector<std::vector<int> > expandEdgeList(View2D view);
 
 std::vector<std::vector<int> > pEdgeList(View2D topView, View2D frontView , View2D sideView);
 
+std::vector<std::vector<int> > removeDuplicate (std::vector<std::vector<int> > edlist);
+
 #endif

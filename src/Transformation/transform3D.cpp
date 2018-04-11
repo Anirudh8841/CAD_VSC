@@ -1,4 +1,6 @@
-#include "../Classes/Object3D.h"
+#include "Object3D.h"
+#include "Object2D.h"
+#include "helper_functions.h"
 #include <algorithm>
 #include <vector>
 
@@ -50,62 +52,63 @@
 // 	return returnVect;
 // }
 
-std::vector<vector<float> > OrthographicConv(Object2D object)
-{
-	int numVertex = object.TopView.VertexList.size();
-	int minAmountTop = 5000;
-	int maxAmountFront = -5000;
-	int maxVertexFront;
-	int minVertexTop;
-	int 
-	for (int i = 0; i < numVertex; i++)
-	{
-		if (minAmountTop > object.TopView.VertexList[i][1])
-		{
-			minAmountTop  = object.TopView.VertexList[i][1];
-			minVertexTop = i;
-		}
-	}
+// std::vector<vector<float> > OrthographicConv(Object2D object)
+// {
+// 	int numVertex = object.TopView.VertexList.size();
+// 	int minAmountTop = 5000;
+// 	int maxAmountFront = -5000;
+// 	int maxVertexFront;
+// 	int minVertexTop;
+// 	int 
+// 	for (int i = 0; i < numVertex; i++)
+// 	{
+// 		if (minAmountTop > object.TopView.VertexList[i][1])
+// 		{
+// 			minAmountTop  = object.TopView.VertexList[i][1];
+// 			minVertexTop = i;
+// 		}
+// 	}
 
-	for (int i = 0; i < numVertex; i++)
-	{
-		if (maxAmountFront > object.TopView.VertexList[i][1])
-		{
-			maxAmountFront = object.TopView.VertexList[i][1];
-			maxVertexFront = i;
-		}
-	}
+// 	for (int i = 0; i < numVertex; i++)
+// 	{
+// 		if (maxAmountFront > object.TopView.VertexList[i][1])
+// 		{
+// 			maxAmountFront = object.TopView.VertexList[i][1];
+// 			maxVertexFront = i;
+// 		}
+// 	}
 
-	int gap = minAmountTop - maxAmountFront;
+// 	int gap = minAmountTop - maxAmountFront;
 
-	for (int i = 0; i < numVertex; i++)
-	{
-		object.TopView.VertexList[i][1] -= gap;
-	}
+// 	for (int i = 0; i < numVertex; i++)
+// 	{
+// 		object.TopView.VertexList[i][1] -= gap;
+// 	}
 
-	std::vector<std::vector<float> > tempVertexList;
-	for (int i = 0; i < numVertex; i++)
-	{
-		if (object.TopView.VertexList[i][1] != object.FrontView.VertexList[i][0])
-		{
-			cout << "Last input Object was inconsistent";
-		}
-		else
-		{
-			std::vector<float> vertex;
-			vertex.push_back(object.TopView.VertexList[i][0]);
-			vertex.push_back(object.TopView.VertexList[i][1]);
-			vertex.push_back(object.FrontView.VertexList[i][1]);
-			tempVertexList.push_back(vertex);
-		}
-	}
-	return tempVertexList;
-}
+// 	std::vector<std::vector<float> > tempVertexList;
+// 	for (int i = 0; i < numVertex; i++)
+// 	{
+// 		if (object.TopView.VertexList[i][1] != object.FrontView.VertexList[i][0])
+// 		{
+// 			cout << "Last input Object was inconsistent";
+// 		}
+// 		else
+// 		{
+// 			std::vector<float> vertex;
+// 			vertex.push_back(object.TopView.VertexList[i][0]);
+// 			vertex.push_back(object.TopView.VertexList[i][1]);
+// 			vertex.push_back(object.FrontView.VertexList[i][1]);
+// 			tempVertexList.push_back(vertex);
+// 		}
+// 	}
+// 	return tempVertexList;
+// }
 
 Object3D convert2DTo3D (Object2D object)
 {
 	Object3D x;
 	x.VertexList = vertices2DTo3D(object.topView.vertexList, object.frontView.vertexList, object.sideView.vertexList);
 	x.EdgeList = pEdgeList(object.topView, object.frontView, object.sideView);
+	x.EdgeList = removeDuplicate(x.EdgeList);
 	return x;
 }
