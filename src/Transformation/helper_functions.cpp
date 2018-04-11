@@ -1,5 +1,6 @@
 #include "helper_functions.h"
 #include <algorithm>
+#include <iostream>
 #include "Object3D.h"
 #include "Object2D.h"
 
@@ -230,22 +231,42 @@ std::vector<std::vector<int> > pEdgeList(View2D topView, View2D frontView , View
 
 std::vector<std::vector<int> > removeDuplicate (std::vector<std::vector<int> > edlist)
 {
-	
+	bool flag;
+	// cout << "inside remove duplicates";
+	std::vector<std::vector<int> > returnlist, returnlist2;
 	for (int i = 0; i < edlist.size(); i++)
 	{
-		for (int j = 0; j < edlist.size(); j++)
+		flag = false;
+		for (int j = i + 1; j < edlist.size(); j++)
 		{
 			if (edlist[i][0] == edlist[j][0] && edlist[i][1] == edlist[j][1])
 			{
-				edlist.erase(edlist.begin() + i);
+				// cout << "aaaa";
+				flag = true;
+				break;
 			}
 			if (edlist[i][1] == edlist[j][0] && edlist[i][0] == edlist[j][1])
 			{
-				edlist.erase(edlist.begin() + i);
+				flag = true;
+				break;
 			}
 		}
+		if (flag == false)
+		{
+			returnlist.push_back(edlist[i]);
+			// cout << "dsjfl";
+		}
 	}
-	return edlist;
+
+	for (int i = 0; i < returnlist.size(); i++)
+	{
+		if (returnlist[i][0] == returnlist[i][1])
+		{
+			continue;
+		}
+		returnlist2.push_back(returnlist[i]);
+	}
+	return returnlist2;
 }
 
 
