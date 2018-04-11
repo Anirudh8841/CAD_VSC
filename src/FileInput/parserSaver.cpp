@@ -271,6 +271,10 @@ void object2DToFile (Object2D object, string filename)
 	outFile << "\n#Top View\nVertex\n";
 	outFile << object.topView.vertexList.size();
 	outFile << '\n';
+	sort( object.topView.vertexList.begin( ), object.topView.vertexList.end( ), [ ](const auto& lhs, const auto& rhs)
+	{
+	   return lhs[0] < rhs[0];
+	});
 	for (int i = 0; i < object.topView.vertexList.size(); i++)
 	{
 		outFile << object.topView.vertexList[i][0] << " " << object.topView.vertexList[i][1] << " " << object.topView.vertexList[i][2] << "\n";
