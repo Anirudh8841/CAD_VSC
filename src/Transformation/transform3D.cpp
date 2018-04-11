@@ -4,8 +4,7 @@
 #include <algorithm>
 #include <vector>
 
-
-
+#include <iostream>
 
 /**
 	This function is written assuming that edges are stored in the the ascending order that is 
@@ -108,6 +107,7 @@ Object3D convert2DTo3D (Object2D object)
 {
 	Object3D x;
 	x.VertexList = vertices2DTo3D(object.topView.vertexList, object.frontView.vertexList, object.sideView.vertexList);
+	// cout << x.VertexList.size() << "size";
 	x.EdgeList = pEdgeList(object.topView, object.frontView, object.sideView);
 	x.EdgeList = removeDuplicate(x.EdgeList);
 	return x;

@@ -333,6 +333,7 @@ void object3DToFile (Object3D object, string filename)
 	fstream outFile(filename, fstream::out);
 	outFile << "#Vertices\n";
 	// cout << "Written";
+	// cout << object.VertexList.size() << "\n";
 	int numVertex = object.VertexList.size();
 	for (int i = 0; i < numVertex; i++)
 	{

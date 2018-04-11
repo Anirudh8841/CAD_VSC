@@ -30,6 +30,8 @@ std::vector<std::vector <float> > sortVertices (std::vector<std::vector<float> >
 std::vector<std::vector<float> > vertices2DTo3D (std::vector<std::vector<float> > Topverlist, std::vector<std::vector<float> > Frontverlist, std::vector<std::vector<float> > Sideverlist)
  {
  	std::vector<std::vector<float> > vertexList3D;
+ 	// cout << "topver" << Topverlist.size();
+ 	// cout << "frontev" << Frontverlist.size();
  	for(int i = 0; i < Topverlist.size(); i++)
  	{
  		for(int j = 0; j < Frontverlist.size(); j++)
@@ -41,9 +43,11 @@ std::vector<std::vector<float> > vertices2DTo3D (std::vector<std::vector<float> 
  				vertex3D.push_back(Topverlist[i][1]);
  				vertex3D.push_back(Topverlist[i][2]);
  				vertex3D.push_back(Frontverlist[j][2]);
+ 				vertexList3D.push_back(vertex3D);
  			}
  		}
  	}
+ 	// cout << "inside vertices 2D to 3D function" << vertexList3D.size();
  	return vertexList3D;
  }
 
