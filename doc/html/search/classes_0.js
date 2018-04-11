@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dplane',['DPlane',['../class_d_plane.html',1,'']]]
+  ['matrix',['Matrix',['../class_matrix.html',1,'']]]
 ];

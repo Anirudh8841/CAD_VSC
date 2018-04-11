@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['v',['V',['../class_vertex.html#ae53abaa6d836fa2261e6cdb8d597931d',1,'Vertex']]],
-  ['vertex',['Vertex',['../class_vertex.html',1,'']]],
-  ['vertex_2eh',['Vertex.h',['../_vertex_8h.html',1,'']]],
-  ['vertexlist',['VertexList',['../class_object.html#a297ee1fc6cb276fc66368c5810bfac31',1,'Object']]]
+  ['readme_2emd',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['removeduplicate',['removeDuplicate',['../helper__functions_8h.html#a559567d50907fcd883d88286097a822b',1,'removeDuplicate(std::vector&lt; std::vector&lt; int &gt; &gt; edlist):&#160;helper_functions.cpp'],['../helper__functions_8cpp.html#a559567d50907fcd883d88286097a822b',1,'removeDuplicate(std::vector&lt; std::vector&lt; int &gt; &gt; edlist):&#160;helper_functions.cpp']]]
 ];

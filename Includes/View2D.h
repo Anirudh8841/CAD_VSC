@@ -23,7 +23,7 @@
 
 */
 
-//! An Object2D class
+//! Accomodates a single orthographic view
 /*! The class view2D consists of vertex list and edge list as objects  
  * Its is used to store the  vertices and edges of the two-dimensional object 
  */

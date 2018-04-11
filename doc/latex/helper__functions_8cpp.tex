@@ -1,0 +1,110 @@
+\hypertarget{helper__functions_8cpp}{}\section{src/\+Transformation/helper\+\_\+functions.cpp File Reference}
+\label{helper__functions_8cpp}\index{src/\+Transformation/helper\+\_\+functions.\+cpp@{src/\+Transformation/helper\+\_\+functions.\+cpp}}
+{\ttfamily \#include \char`\"{}helper\+\_\+functions.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}Object3\+D.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object2\+D.\+h\char`\"{}}\newline
+Include dependency graph for helper\+\_\+functions.\+cpp\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \mbox{\hyperlink{helper__functions_8cpp_a3557aab6095b158c404877ac76d12f10}{sort\+Vertices}} (std\+::vector$<$ std\+::vector$<$ float $>$ $>$ vertex\+List)
+\item 
+std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \mbox{\hyperlink{helper__functions_8cpp_a07086a0952c42233b56e8ef7bbe144e6}{vertices2\+D\+To3D}} (std\+::vector$<$ std\+::vector$<$ float $>$ $>$ Topverlist, std\+::vector$<$ std\+::vector$<$ float $>$ $>$ Frontverlist, std\+::vector$<$ std\+::vector$<$ float $>$ $>$ Sideverlist)
+\begin{DoxyCompactList}\small\item\em This function returns the vertices with all the three coordinates built using the two of the three views. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \mbox{\hyperlink{helper__functions_8cpp_a0279269b8c09687e73eb88ad43d6fa2b}{expand\+Edge\+List}} (\mbox{\hyperlink{class_view2_d}{View2D}} view)
+\item 
+std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \mbox{\hyperlink{helper__functions_8cpp_ae61c5760a17e9296333ead1b4e30ef47}{p\+Edge\+List}} (\mbox{\hyperlink{class_view2_d}{View2D}} top\+View, \mbox{\hyperlink{class_view2_d}{View2D}} front\+View, \mbox{\hyperlink{class_view2_d}{View2D}} side\+View)
+\item 
+std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \mbox{\hyperlink{helper__functions_8cpp_a559567d50907fcd883d88286097a822b}{remove\+Duplicate}} (std\+::vector$<$ std\+::vector$<$ int $>$ $>$ edlist)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{helper__functions_8cpp_a0279269b8c09687e73eb88ad43d6fa2b}\label{helper__functions_8cpp_a0279269b8c09687e73eb88ad43d6fa2b}} 
+\index{helper\+\_\+functions.\+cpp@{helper\+\_\+functions.\+cpp}!expand\+Edge\+List@{expand\+Edge\+List}}
+\index{expand\+Edge\+List@{expand\+Edge\+List}!helper\+\_\+functions.\+cpp@{helper\+\_\+functions.\+cpp}}
+\subsubsection{\texorpdfstring{expand\+Edge\+List()}{expandEdgeList()}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$int$>$ $>$ expand\+Edge\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_view2_d}{View2D}}}]{view }\end{DoxyParamCaption})}
+
+This function returns the possible edges from the edge list in top, front and side view 
+\begin{DoxyParams}{Parameters}
+{\em view} & This is one of the three views. Whose edge list would be expanded to cover all the possible edges there could be \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{helper__functions_8cpp_ae61c5760a17e9296333ead1b4e30ef47}\label{helper__functions_8cpp_ae61c5760a17e9296333ead1b4e30ef47}} 
+\index{helper\+\_\+functions.\+cpp@{helper\+\_\+functions.\+cpp}!p\+Edge\+List@{p\+Edge\+List}}
+\index{p\+Edge\+List@{p\+Edge\+List}!helper\+\_\+functions.\+cpp@{helper\+\_\+functions.\+cpp}}
+\subsubsection{\texorpdfstring{p\+Edge\+List()}{pEdgeList()}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$int$>$ $>$ p\+Edge\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_view2_d}{View2D}}}]{top\+View,  }\item[{\mbox{\hyperlink{class_view2_d}{View2D}}}]{front\+View,  }\item[{\mbox{\hyperlink{class_view2_d}{View2D}}}]{side\+View }\end{DoxyParamCaption})}
+
+This function extracts frm the list of possible edges those which are feasible. 
+\begin{DoxyParams}{Parameters}
+{\em top\+View} & top view of the object \\
+\hline
+{\em front\+View} & front view of the object \\
+\hline
+{\em side\+View} & side view of the object \\
+\hline
+{\em view} & This is one of the three views. Whose edge list would be expanded to cover all the possible edges there could be \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{helper__functions_8cpp_a559567d50907fcd883d88286097a822b}\label{helper__functions_8cpp_a559567d50907fcd883d88286097a822b}} 
+\index{helper\+\_\+functions.\+cpp@{helper\+\_\+functions.\+cpp}!remove\+Duplicate@{remove\+Duplicate}}
+\index{remove\+Duplicate@{remove\+Duplicate}!helper\+\_\+functions.\+cpp@{helper\+\_\+functions.\+cpp}}
+\subsubsection{\texorpdfstring{remove\+Duplicate()}{removeDuplicate()}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$int$>$ $>$ remove\+Duplicate (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ int $>$ $>$}]{edlist }\end{DoxyParamCaption})}
+
+This function removes the Duplicates from the p\+\_\+list; 
+\begin{DoxyParams}{Parameters}
+{\em edlist} & list of edges to be refined \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{helper__functions_8cpp_a3557aab6095b158c404877ac76d12f10}\label{helper__functions_8cpp_a3557aab6095b158c404877ac76d12f10}} 
+\index{helper\+\_\+functions.\+cpp@{helper\+\_\+functions.\+cpp}!sort\+Vertices@{sort\+Vertices}}
+\index{sort\+Vertices@{sort\+Vertices}!helper\+\_\+functions.\+cpp@{helper\+\_\+functions.\+cpp}}
+\subsubsection{\texorpdfstring{sort\+Vertices()}{sortVertices()}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector $<$float$>$ $>$ sort\+Vertices (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ float $>$ $>$}]{vertex\+List }\end{DoxyParamCaption})}
+
+This function sorts vertices either 3D or 2D in the ascending order. 
+\begin{DoxyParams}{Parameters}
+{\em vertex\+List} & List of vertices to be arranged \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vertices arranged in the ascending order 
+\end{DoxyReturn}
+\mbox{\Hypertarget{helper__functions_8cpp_a07086a0952c42233b56e8ef7bbe144e6}\label{helper__functions_8cpp_a07086a0952c42233b56e8ef7bbe144e6}} 
+\index{helper\+\_\+functions.\+cpp@{helper\+\_\+functions.\+cpp}!vertices2\+D\+To3D@{vertices2\+D\+To3D}}
+\index{vertices2\+D\+To3D@{vertices2\+D\+To3D}!helper\+\_\+functions.\+cpp@{helper\+\_\+functions.\+cpp}}
+\subsubsection{\texorpdfstring{vertices2\+D\+To3\+D()}{vertices2DTo3D()}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$float$>$ $>$ vertices2\+D\+To3D (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ float $>$ $>$}]{Topverlist,  }\item[{std\+::vector$<$ std\+::vector$<$ float $>$ $>$}]{frontverlist,  }\item[{std\+::vector$<$ std\+::vector$<$ float $>$ $>$}]{sideverlist }\end{DoxyParamCaption})}
+
+
+
+This function returns the vertices with all the three coordinates built using the two of the three views. 
+
+This function converts vertices in the 2D coordinates to their counterparts in the 3D coordinates. 
+\begin{DoxyParams}{Parameters}
+{\em Topverlist} & vertex coordinates in the top view \\
+\hline
+{\em Frontverlist} & vertex coordinates in the front view \\
+\hline
+{\em Sideverlist} & vertex coordinates in the side view \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vertices arranged in the ascending order 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 5

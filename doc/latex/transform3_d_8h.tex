@@ -1,0 +1,42 @@
+\hypertarget{transform3_d_8h}{}\section{Includes/transform3D.h File Reference}
+\label{transform3_d_8h}\index{Includes/transform3\+D.\+h@{Includes/transform3\+D.\+h}}
+{\ttfamily \#include \char`\"{}Object3\+D.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object2\+D.\+h\char`\"{}}\newline
+Include dependency graph for transform3\+D.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ vector$<$ float $>$ $>$ \mbox{\hyperlink{transform3_d_8h_ad36c56252dae465443ef0f31b303a4fd}{Orthographic\+Conv}} (\mbox{\hyperlink{class_object2_d}{Object2D}} object)
+\item 
+\mbox{\hyperlink{class_object3_d}{Object3D}} \mbox{\hyperlink{transform3_d_8h_a28cb4ddbbaf6f020c02ed43d923bf4b4}{convert2\+D\+To3D}} (\mbox{\hyperlink{class_object2_d}{Object2D}} object)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{transform3_d_8h_a28cb4ddbbaf6f020c02ed43d923bf4b4}\label{transform3_d_8h_a28cb4ddbbaf6f020c02ed43d923bf4b4}} 
+\index{transform3\+D.\+h@{transform3\+D.\+h}!convert2\+D\+To3D@{convert2\+D\+To3D}}
+\index{convert2\+D\+To3D@{convert2\+D\+To3D}!transform3\+D.\+h@{transform3\+D.\+h}}
+\subsubsection{\texorpdfstring{convert2\+D\+To3\+D()}{convert2DTo3D()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_object3_d}{Object3D}} convert2\+D\+To3D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_object2_d}{Object2D}}}]{object }\end{DoxyParamCaption})}
+
+This function is written assuming that edges are stored in the the ascending order that is Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{transform3_d_8h_ad36c56252dae465443ef0f31b303a4fd}\label{transform3_d_8h_ad36c56252dae465443ef0f31b303a4fd}} 
+\index{transform3\+D.\+h@{transform3\+D.\+h}!Orthographic\+Conv@{Orthographic\+Conv}}
+\index{Orthographic\+Conv@{Orthographic\+Conv}!transform3\+D.\+h@{transform3\+D.\+h}}
+\subsubsection{\texorpdfstring{Orthographic\+Conv()}{OrthographicConv()}}
+{\footnotesize\ttfamily std\+::vector$<$vector$<$float$>$ $>$ Orthographic\+Conv (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_object2_d}{Object2D}}}]{object }\end{DoxyParamCaption})}
+
+This function traces back the 3D object whose orthographic views are given 
+\begin{DoxyParams}{Parameters}
+{\em object} & 2D object whose re-\/construction is required. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A 3D object corresponding to orthographic views. 
+\end{DoxyReturn}

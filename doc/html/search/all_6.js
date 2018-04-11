@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['inputfromfileclicked',['inputFromFileClicked',['../miscfunctions_8h.html#a308c1019d3ee62e27207264885fd89fc',1,'miscfunctions.h']]],
-  ['inputpanelactive',['inputPanelActive',['../miscfunctions_8h.html#a98dcee202a6d2b900d5616caf67eb3aa',1,'miscfunctions.h']]]
+  ['helper_5ffunctions_2ecpp',['helper_functions.cpp',['../helper__functions_8cpp.html',1,'']]],
+  ['helper_5ffunctions_2eh',['helper_functions.h',['../helper__functions_8h.html',1,'']]]
 ];

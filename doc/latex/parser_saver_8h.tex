@@ -1,25 +1,46 @@
-\hypertarget{parser_saver_8h}{}\section{File\+Input/parser\+Saver.h File Reference}
-\label{parser_saver_8h}\index{File\+Input/parser\+Saver.\+h@{File\+Input/parser\+Saver.\+h}}
-{\ttfamily \#include \char`\"{}3\+D\+Object\char`\"{}}\newline
+\hypertarget{parser_saver_8h}{}\section{Includes/parser\+Saver.h File Reference}
+\label{parser_saver_8h}\index{Includes/parser\+Saver.\+h@{Includes/parser\+Saver.\+h}}
+{\ttfamily \#include \char`\"{}Object3\+D.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object2\+D.\+h\char`\"{}}\newline
 Include dependency graph for parser\+Saver.\+h\+:
 % FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{parser_saver_8h_ac3846b3e3fea5b7c5a20f67efbceeb07}{parse\+File\+And\+Make\+Object}} (std\+::\+String filename)
+\mbox{\hyperlink{class_object3_d}{Object3D}} \mbox{\hyperlink{parser_saver_8h_ac011b493577d4fe5707bab75061a58f1}{file\+To\+Object3D}} (std\+::string filename)
 \begin{DoxyCompactList}\small\item\em Parse file and make object of 3\+D\+Object class. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{parser_saver_8h_a488c2c5db2681416015f12ced9d27e89}{£}} (3\+D\+Object object, std\+::\+String filename)
+void \mbox{\hyperlink{parser_saver_8h_a81d25020c2d2b7f70f402dfb34eba44d}{object3\+D\+To\+File}} (\mbox{\hyperlink{class_object3_d}{Object3D}} object, std\+::string filename)
 \item 
-void \mbox{\hyperlink{parser_saver_8h_a502b27dd25b4b998af14b91e66780428}{write\+To\+File2D}} (2\+Dobject object, std\+::\+String filename)
+void \mbox{\hyperlink{parser_saver_8h_a31b641619a568cb209533ff7b696d75c}{object2\+D\+To\+File}} (\mbox{\hyperlink{class_object2_d}{Object2D}} object, std\+::string filename)
+\item 
+\mbox{\hyperlink{class_object2_d}{Object2D}} \mbox{\hyperlink{parser_saver_8h_a9b2f9d245d53c0e24db59fa2f0068108}{file\+To\+Object2D}} (string filename)
+\item 
+bool \mbox{\hyperlink{parser_saver_8h_af9462c39bf7b18e7acc418479dfc7bbd}{does\+Edge\+Exists}} (std\+::vector$<$ std\+::vector$<$ int $>$ $>$ Edge\+List, std\+::vector$<$ int $>$ edge)
 \end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{parser_saver_8h_ac3846b3e3fea5b7c5a20f67efbceeb07}\label{parser_saver_8h_ac3846b3e3fea5b7c5a20f67efbceeb07}} 
-\index{parser\+Saver.\+h@{parser\+Saver.\+h}!parse\+File\+And\+Make\+Object@{parse\+File\+And\+Make\+Object}}
-\index{parse\+File\+And\+Make\+Object@{parse\+File\+And\+Make\+Object}!parser\+Saver.\+h@{parser\+Saver.\+h}}
-\subsubsection{\texorpdfstring{parse\+File\+And\+Make\+Object()}{parseFileAndMakeObject()}}
-{\footnotesize\ttfamily parse\+File\+And\+Make\+Object (\begin{DoxyParamCaption}\item[{std\+::\+String}]{filename }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{parser_saver_8h_af9462c39bf7b18e7acc418479dfc7bbd}\label{parser_saver_8h_af9462c39bf7b18e7acc418479dfc7bbd}} 
+\index{parser\+Saver.\+h@{parser\+Saver.\+h}!does\+Edge\+Exists@{does\+Edge\+Exists}}
+\index{does\+Edge\+Exists@{does\+Edge\+Exists}!parser\+Saver.\+h@{parser\+Saver.\+h}}
+\subsubsection{\texorpdfstring{does\+Edge\+Exists()}{doesEdgeExists()}}
+{\footnotesize\ttfamily bool does\+Edge\+Exists (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ int $>$ $>$}]{Edge\+List,  }\item[{std\+::vector$<$ int $>$}]{edge }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{parser_saver_8h_a9b2f9d245d53c0e24db59fa2f0068108}\label{parser_saver_8h_a9b2f9d245d53c0e24db59fa2f0068108}} 
+\index{parser\+Saver.\+h@{parser\+Saver.\+h}!file\+To\+Object2D@{file\+To\+Object2D}}
+\index{file\+To\+Object2D@{file\+To\+Object2D}!parser\+Saver.\+h@{parser\+Saver.\+h}}
+\subsubsection{\texorpdfstring{file\+To\+Object2\+D()}{fileToObject2D()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_object2_d}{Object2D}} file\+To\+Object2D (\begin{DoxyParamCaption}\item[{string}]{filename }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{parser_saver_8h_ac011b493577d4fe5707bab75061a58f1}\label{parser_saver_8h_ac011b493577d4fe5707bab75061a58f1}} 
+\index{parser\+Saver.\+h@{parser\+Saver.\+h}!file\+To\+Object3D@{file\+To\+Object3D}}
+\index{file\+To\+Object3D@{file\+To\+Object3D}!parser\+Saver.\+h@{parser\+Saver.\+h}}
+\subsubsection{\texorpdfstring{file\+To\+Object3\+D()}{fileToObject3D()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_object3_d}{Object3D}} file\+To\+Object3D (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
 
 
 
@@ -43,12 +64,12 @@ Note that filename should have \char`\"{}.\+txt\char`\"{} extension and formatte
 
 \end{DoxyReturn}
 Here is the caller graph for this function\+:
-% FIG 1
-\mbox{\Hypertarget{parser_saver_8h_a502b27dd25b4b998af14b91e66780428}\label{parser_saver_8h_a502b27dd25b4b998af14b91e66780428}} 
-\index{parser\+Saver.\+h@{parser\+Saver.\+h}!write\+To\+File2D@{write\+To\+File2D}}
-\index{write\+To\+File2D@{write\+To\+File2D}!parser\+Saver.\+h@{parser\+Saver.\+h}}
-\subsubsection{\texorpdfstring{write\+To\+File2\+D()}{writeToFile2D()}}
-{\footnotesize\ttfamily void write\+To\+File2D (\begin{DoxyParamCaption}\item[{2\+Dobject}]{object,  }\item[{std\+::\+String}]{filename }\end{DoxyParamCaption})}
+% FIG 3
+\mbox{\Hypertarget{parser_saver_8h_a31b641619a568cb209533ff7b696d75c}\label{parser_saver_8h_a31b641619a568cb209533ff7b696d75c}} 
+\index{parser\+Saver.\+h@{parser\+Saver.\+h}!object2\+D\+To\+File@{object2\+D\+To\+File}}
+\index{object2\+D\+To\+File@{object2\+D\+To\+File}!parser\+Saver.\+h@{parser\+Saver.\+h}}
+\subsubsection{\texorpdfstring{object2\+D\+To\+File()}{object2DToFile()}}
+{\footnotesize\ttfamily void object2\+D\+To\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_object2_d}{Object2D}}}]{object,  }\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
 
 Makes a file of \char`\"{}.\+txt\char`\"{} format using the norms defined in the mathematical analysis docfile for 3D object. 
 \begin{DoxyParams}{Parameters}
@@ -60,11 +81,13 @@ Makes a file of \char`\"{}.\+txt\char`\"{} format using the norms defined in the
 \begin{DoxyReturn}{Returns}
 void type. A file would be made with the name as defined by the filename parameter. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{parser_saver_8h_a488c2c5db2681416015f12ced9d27e89}\label{parser_saver_8h_a488c2c5db2681416015f12ced9d27e89}} 
-\index{parser\+Saver.\+h@{parser\+Saver.\+h}!£@{£}}
-\index{£@{£}!parser\+Saver.\+h@{parser\+Saver.\+h}}
-\subsubsection{\texorpdfstring{£()}{£()}}
-{\footnotesize\ttfamily void £ (\begin{DoxyParamCaption}\item[{3\+D\+Object}]{object,  }\item[{std\+::\+String}]{filename }\end{DoxyParamCaption})}
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{parser_saver_8h_a81d25020c2d2b7f70f402dfb34eba44d}\label{parser_saver_8h_a81d25020c2d2b7f70f402dfb34eba44d}} 
+\index{parser\+Saver.\+h@{parser\+Saver.\+h}!object3\+D\+To\+File@{object3\+D\+To\+File}}
+\index{object3\+D\+To\+File@{object3\+D\+To\+File}!parser\+Saver.\+h@{parser\+Saver.\+h}}
+\subsubsection{\texorpdfstring{object3\+D\+To\+File()}{object3DToFile()}}
+{\footnotesize\ttfamily void object3\+D\+To\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_object3_d}{Object3D}}}]{object,  }\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
 
 Makes a file of \char`\"{}.\+txt\char`\"{} format using the norms defined in the mathematical analysis docfile for 3D object. 
 \begin{DoxyParams}{Parameters}
@@ -76,3 +99,5 @@ Makes a file of \char`\"{}.\+txt\char`\"{} format using the norms defined in the
 \begin{DoxyReturn}{Returns}
 void type. A file would be made with the name as defined by the filename parameter. 
 \end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 5
