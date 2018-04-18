@@ -229,27 +229,28 @@ Object2D fileToObject2D(string filename)
 
 	for (int i = 0; i < 3; i++)
 	{
-		for (int i = 0; i < numVertex; i++)
+		for (int j = 0; j < numVertex; j++)
 		{
 			inFile >> x >> y;
 			std::vector<float> tempVect;
-			tempVect.push_back(i + 1);
+			tempVect.push_back(j + 1);
 			tempVect.push_back(x);
 			tempVect.push_back(y);
 			if (i == 0)
 				object.topView.vertexList.push_back(tempVect);
-			else if ( i == 1)
+			else if (i == 1)
 				object.frontView.vertexList.push_back(tempVect);
 			else 
 				object.sideView.vertexList.push_back(tempVect);
 		}		
-	
 		inFile >> numEdges;
-		for (int i = 0; i < numEdges; i++)
+		cout << numEdges << "out of vertexlist";
+		for (int j = 0; j < numEdges; j++)
 		{
 			cin >> y >> z;
+			cout << y << z;
 			std::vector<int> tempVect;
-			tempVect.push_back(i + 1);
+			// tempVect.push_back(j + 1);
 			tempVect.push_back(y);
 			tempVect.push_back(z);
 			if (i == 0)
@@ -260,6 +261,7 @@ Object2D fileToObject2D(string filename)
 				object.sideView.edgeList.push_back(tempVect);
 		}		
 	}
+	cout << "out of file";
 	inFile.close();
 	return object;
 }
